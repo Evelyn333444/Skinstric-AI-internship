@@ -100,6 +100,17 @@
   gap: 16px;
 }
 
+.take-test-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.take-test-button:hover .take-test-logo {
+  opacity: 0.85;
+}
+
 .take-test-logo {
   display: flex;
   justify-content: center;

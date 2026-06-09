@@ -21,17 +21,7 @@ function Origine() {
               <div className="romb2">
                 <div className="romb3">
                   <button className="intro-type-btn">CLICK TO TYPE</button>
-                  <span className="rombus-text">Introduce Yourself</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="rombuses">
-            <div className="romb1">
-              <div className="romb2">
-                <div className="romb3">
-                  <button className="intro-type-btn">CLICK TO TYPE</button>
-                  <span className="rombus-text">Introduce Yourself</span>
+                  <span className="rombus-text">Where Are You From?</span>
                 </div>
               </div>
             </div>

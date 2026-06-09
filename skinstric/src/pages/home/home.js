@@ -3,7 +3,7 @@ import './home.css'
 import discoverai from './assets/discoverai.svg'
 import taketest from './assets/taketest.svg'
 
-function home() {
+function home({ onTakeTestClick }) {
   return (
     <div>
       <header className="app-header">
@@ -15,17 +15,19 @@ function home() {
           <button className="enter-code-btn">ENTER CODE</button>
         </div>
       </header>
-      <body>
+      <div>
         <div className="body-left">
-            <img src={require('./assets/discoverai.svg')}  className="discover-ai-logo"/>
+            <img src={discoverai} className="discover-ai-logo" alt="Discover AI" />
         </div>
         <div className="body-content">
-            <span className= "center-text">Sophisticated Skincare</span>
+            <span className="center-text">Sophisticated Skincare</span>
         </div>
         <div className="body-right">
-            <img src={require('./assets/taketest.svg')}  className="take-test-logo"/>
+            <button className="take-test-button" onClick={onTakeTestClick}>
+              <img src={taketest} className="take-test-logo" />
+            </button>
         </div>
-      </body>
+      </div>
       <footer>
          <div className="footer-content">
             <span className="footer-text">SKINSTRIC DEVELOPED AN A.I. THAT CREATES A HIGHLY-PERSONALIZED ROUTINE TAILORED TO WHAT YOUR SKIN NEEDS.</span>

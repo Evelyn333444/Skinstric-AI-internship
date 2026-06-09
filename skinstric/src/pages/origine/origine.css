@@ -1,0 +1,64 @@
+.header-left-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.intro-text {
+    font-weight: 600px;
+    font-style: SemiBold;
+    size: 16px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+    color: #1A1B1C;
+}
+
+/* Shapes */
+
+.romb3 {
+    display: flex;
+    gap: 16px;
+    margin-top: 99px;
+    margin-left: 579px;
+    width: 762px;
+    height: 762px;
+    border: 2px dashed #dadcdf;
+    transform: rotate(45deg);
+}
+
+.romb2 {
+    display: flex;
+    gap: 16px;
+    margin-top: 96px;
+    margin-left: 582px;
+    width: 762px;
+    height: 762px;
+    border: 2px dashed #b4b5b6;
+    transform: rotate(45deg);
+}
+
+.romb1 {
+    display: flex;
+    gap: 16px;
+    margin-top: 90px;
+    margin-left: 585px;
+    width: 762px;
+    height: 762px;
+    border: 2px dashed #595a5a;
+    transform: rotate(45deg);
+}
+
+/* Icons */
+
+.back-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 97px;
+    height: 44px;
+    margin-top: 880px;
+    margin-left: 32px;
+    gap: 16px;
+}
