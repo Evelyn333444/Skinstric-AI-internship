@@ -1,4 +1,7 @@
 import React from 'react'
+import './home.css'
+import discoverai from './assets/discoverai.svg'
+import taketest from './assets/taketest.svg'
 
 function home() {
   return (
@@ -14,15 +17,20 @@ function home() {
       </header>
       <body>
         <div className="body-left">
-
+            <img src={require('./assets/discoverai.svg')}  className="discover-ai-logo"/>
         </div>
         <div className="body-content">
-            <div className= "center-text">Sophisticated Skincare</div>
+            <span className= "center-text">Sophisticated Skincare</span>
         </div>
         <div className="body-right">
-            
+            <img src={require('./assets/taketest.svg')}  className="take-test-logo"/>
         </div>
       </body>
+      <footer>
+         <div className="footer-content">
+            <span className="footer-text">SKINSTRIC DEVELOPED AN A.I. THAT CREATES A HIGHLY-PERSONALIZED ROUTINE TAILORED TO WHAT YOUR SKIN NEEDS.</span>
+        </div>
+      </footer>
     </div>
   )
 }

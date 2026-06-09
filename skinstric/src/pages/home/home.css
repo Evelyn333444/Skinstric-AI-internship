@@ -42,7 +42,9 @@
   background-color: #333;
 }
 
-.center-text {
+/* Body */
+
+.body-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,8 +52,79 @@
   width: 680px;
   margin-top: 361px;
   margin-bottom: 620px;
-  color: #1a1b1c;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -7%;
+  line-height: 120px;
+  font-style: light;
   font-size: 128px;
   background-color: white;
+  color: #1a1b1c;
   cursor: none;
+}
+
+/* Shapes */
+
+.rectangle-2779 {
+    width: 602px;
+    height: 602px;
+    margin-top: 179px;
+    margin-bottom: -301px;
+    border: 2px dashed #a0a4ab 0.10000000149011612, 8.000000000000002, 0.10000000149011612, 8.000000000000002;
+    border-style: dashed;
+}
+
+.rectangle-2778 {
+    width: 602px;
+    height: 602px;
+    margin-top: 179px;
+    margin-left: 1619px;
+    border: 2px style dashed #a0a4ab 0.10000000149011612, 8.000000000000002, 0.10000000149011612, 8.000000000000002;
+    border-style: dashed;
+}
+
+/* Icons */
+
+.discover-ai-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 44px;
+  margin-top: 458px;
+  margin-left: 32px;
+  gap: 16px;
+}
+
+.take-test-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 127px;
+  height: 44px;
+  margin-top: 458px;
+  margin-right: 1761px;
+  gap: 16px;
+}
+
+/* Footer */
+
+.footer-content {
+    width: 316px;
+    height: 72px;
+    margin-top: 862px;
+    margin-left: 32px;
+}
+
+.footer-text {
+    color: #1a1b1c;
+    font-size: 16px;
+    font-weight: 400px;
+    font-size: 14px;
+    font-style: regular;
+    line-height: 24px;
 }
