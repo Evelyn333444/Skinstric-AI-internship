@@ -10,6 +10,12 @@ function introduce({ onBackClick, onSearchSubmit }) {
     setShowSearchBar(true);
   };
 
+  const handleBackClick = () => {
+    if (onBackClick) {
+      onBackClick();
+    }
+  };
+
   return (
     <div>
         <header>
@@ -38,7 +44,7 @@ function introduce({ onBackClick, onSearchSubmit }) {
         </div>
         </div>
         <footer>
-            <button className="back-button" onClick={onBackClick}>
+            <button className="back-button" onClick={handleBackClick}>
               <img src={BackButton} alt="Back" />
             </button>
         </footer>

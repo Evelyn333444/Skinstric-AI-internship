@@ -3,11 +3,17 @@ import BackButton from './assets/backbutton.svg'
 import './origine.css'
 import SearchBar from '../../components/searchBar/searchBar'
 
-function Origine() {
+function Origine({ onBackClick }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
 
   const handleTypeClick = () => {
     setShowSearchBar(true);
+  };
+
+  const handleBackClick = () => {
+    if (onBackClick) {
+      onBackClick();
+    }
   };
 
   return (
@@ -37,7 +43,9 @@ function Origine() {
         </div>
       </main>
       <footer>
-        <img src={BackButton} alt="Back" className="back-button" />
+        <button className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="Back" />
+        </button>
       </footer>
     </div>
   )

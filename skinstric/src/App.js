@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       {page === 'home' && <Home onTakeTestClick={() => setPage('intro')} />}
       {page === 'intro' && <Introduce onBackClick={() => setPage('home')} onSearchSubmit={() => setPage('origine')} />}
-      {page === 'origine' && <Origine />}
+      {page === 'origine' && <Origine onBackClick={() => setPage('intro')} />}
     </div>
   );
 }
