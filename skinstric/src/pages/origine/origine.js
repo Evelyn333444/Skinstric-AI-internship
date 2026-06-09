@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BackButton from './assets/backbutton.svg'
 import './origine.css'
+import SearchBar from '../../components/searchBar/searchBar'
 
 function Origine() {
+  const [showSearchBar, setShowSearchBar] = useState(false);
+
+  const handleTypeClick = () => {
+    setShowSearchBar(true);
+  };
+
   return (
     <div className="origine-page">
       <header>
@@ -20,8 +27,9 @@ function Origine() {
             <div className="romb1">
               <div className="romb2">
                 <div className="romb3">
-                  <button className="intro-type-btn">CLICK TO TYPE</button>
+                  <button className="intro-type-btn" onClick={handleTypeClick}>CLICK TO TYPE</button>
                   <span className="rombus-text">Where Are You From?</span>
+                  {showSearchBar && <SearchBar initialOpen={true} />}
                 </div>
               </div>
             </div>

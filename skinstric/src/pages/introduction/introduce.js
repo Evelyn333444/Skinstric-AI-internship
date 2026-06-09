@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './introduce.css'
 import BackButton from './assets/backbutton.svg'
+import SearchBar from '../../components/searchBar/searchBar'
 
-function introduce({ onBackClick }) {
+function introduce({ onBackClick, onSearchSubmit }) {
+  const [showSearchBar, setShowSearchBar] = useState(false);
+
+  const handleTypeClick = () => {
+    setShowSearchBar(true);
+  };
+
   return (
     <div>
         <header>
@@ -20,8 +27,9 @@ function introduce({ onBackClick }) {
                 <div className="romb1">
                 <div className="romb2">
                 <div className="romb3">
-                    <button className="intro-type-btn">CLICK TO TYPE</button>
+                    <button className="intro-type-btn" onClick={handleTypeClick}>CLICK TO TYPE</button>
                     <span className="rombus-text">Introduce Yourself</span>
+                    {showSearchBar && <SearchBar initialOpen={true} onSubmit={onSearchSubmit} />}
                     {/* Fix the width and height of romb1 and romb2. they should not be the same as romb3, but I have not been able to look at them at a closer level */}
                 </div>
                 </div>
