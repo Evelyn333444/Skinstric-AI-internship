@@ -1,0 +1,57 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 1920px;
+  height: 64px;
+  background-color: #f5f5f5;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-title {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header-intro {
+  color: grey;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.enter-code-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enter-code-btn:hover {
+  background-color: #333;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  width: 680px;
+  margin-top: 361px;
+  margin-bottom: 620px;
+  color: #1a1b1c;
+  font-size: 128px;
+  background-color: white;
+  cursor: none;
+}
