@@ -1,0 +1,48 @@
+.body-text {
+    width: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+    color: #1A1B1C;
+}
+
+.body-context {
+    width: 227px;
+    height: 24px;
+    margin-top: 468px;
+    margin-left: 846px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prepare-square-1,
+.prepare-square-2,
+.prepare-square-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prepare-square-1 {
+    width: 400px;
+    height: 400px;
+    border: 2px dashed #999;
+    transform: rotate(40deg);
+}
+
+.prepare-square-2 {
+    width: 380px;
+    height: 380px;
+    border: 2px dashed #bbb;
+    transform: rotate(45deg);
+}
+
+.prepare-square-3 {
+    width: 360px;
+    height: 360px;
+    border: 2px dashed #ddd;
+    transform: rotate(50deg);
+}
