@@ -1,0 +1,14 @@
+.body-content {
+    width: 680px;
+    height: 240px;
+    margin-top: 361px;
+    margin-left: 32px;
+}
+
+.center-text {
+    font-weight: 300;
+    font-style: light;
+    font-size: 128px;
+    line-height: 120px;
+    letter-spacing: -7%;
+}
