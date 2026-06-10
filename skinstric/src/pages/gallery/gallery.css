@@ -1,0 +1,40 @@
+.header-left-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.body-left-intro {
+    width: 227px;
+    height: 24px;
+    margin-top: 86px;
+    margin-left: 32px;
+}
+
+/* Icons */
+
+.back-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 97px;
+    height: 44px;
+    margin-top: 880px;
+    margin-left: 32px;
+    gap: 16px;
+}
+
+.scanFace {
+    width: 520px;
+    height: 482px;
+    margin-top: 240px;
+    margin-left: 239px;
+}
+
+.accessGallery {
+    width: 488px;
+    height: 482px;
+    margin-top: 240px;
+    margin-left: 1193px;
+}

@@ -4,6 +4,13 @@
   gap: 20px;
 }
 
+.body-left-intro {
+    width: 227px;
+    height: 24px;
+    margin-top: 86px;
+    margin-left: 32px;
+}
+
 .intro-text {
     font-weight: 600px;
     font-style: SemiBold;
