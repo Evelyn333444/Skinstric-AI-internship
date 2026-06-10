@@ -69,22 +69,42 @@
 
 /* Shapes */
 
+.body-left {
+  position: relative;
+}
+
 .rectangle-2779 {
-    width: 602px;
-    height: 602px;
-    margin-top: 179px;
-    margin-bottom: -301px;
-    border: 2px dashed #a0a4ab 0.10000000149011612, 8.000000000000002, 0.10000000149011612, 8.000000000000002;
-    border-style: dashed;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  border: 2px dashed #a0a4ab;
+  border-radius: 16px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.rectangle-2779 .discover-ai-logo {
+  margin: 0;
 }
 
 .rectangle-2778 {
-    width: 602px;
-    height: 602px;
-    margin-top: 179px;
-    margin-left: 1619px;
-    border: 2px style dashed #a0a4ab 0.10000000149011612, 8.000000000000002, 0.10000000149011612, 8.000000000000002;
-    border-style: dashed;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  border: 2px dashed #a0a4ab;
+  border-radius: 16px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.rectangle-2778 .take-test-button {
+  margin: 0;
+}
+
+.rectangle-2778 .take-test-logo {
+  margin: 0;
 }
 
 /* Icons */
@@ -120,6 +140,59 @@
   margin-top: 458px;
   margin-right: 1761px;
   gap: 16px;
+}
+
+.home-page {
+  position: relative;
+}
+
+.take-test-hover-area {
+  position: relative;
+}
+
+.home-preview-wrapper {
+  position: absolute;
+  top: -20px;
+  right: 140px;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  z-index: 100;
+}
+
+.home-to-intro-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.preview-header {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #1a1b1c;
+}
+
+.preview-text {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.preview-continue-btn {
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.preview-continue-btn:hover {
+  background-color: #1f2937;
 }
 
 /* Footer */

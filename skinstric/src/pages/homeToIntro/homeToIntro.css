@@ -1,3 +1,5 @@
+/* Body */
+
 .body-content {
     width: 680px;
     height: 240px;
@@ -11,4 +13,22 @@
     font-size: 128px;
     line-height: 120px;
     letter-spacing: -7%;
+}
+
+/* Icons */
+
+.take-test-button:hover .take-test-logo {
+  opacity: 0.85;
+}
+
+.take-test-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 127px;
+  height: 44px;
+  margin-top: 458px;
+  margin-right: 1761px;
+  gap: 16px;
+  transform: rotate(45deg);
 }
