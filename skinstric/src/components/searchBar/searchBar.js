@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './searchBar.css';
 
-export default function SearchBar({ initialOpen = false, onSubmit }) {
+export default function SearchBar({ initialOpen = false, onSubmit, onChange }) {
   const [isOpen, setIsOpen] = useState(initialOpen);
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
@@ -19,6 +19,9 @@ export default function SearchBar({ initialOpen = false, onSubmit }) {
 
   const handleChange = (e) => {
     setQuery(e.target.value);
+    if (onChange) {
+      onChange(e.target.value);
+    }
   };
 
   const handleKeyDown = (e) => {

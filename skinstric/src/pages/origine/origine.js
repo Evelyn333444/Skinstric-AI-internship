@@ -1,16 +1,27 @@
 import React, { useState } from 'react'
 import BackButton from './assets/backbutton.svg'
 import './origine.css'
-import SearchBar from '../../components/searchBar/searchBar'
+import Proceed from './assets/proceed.svg'
 
 function Origine({ onBackClick }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
+  const [hasSearchText, setHasSearchText] = useState(false);
 
   const handleTypeClick = () => {
     setShowSearchBar(true);
   };
 
+  const handleInputChange = (e) => {
+    setHasSearchText(e.target.value.length > 0);
+  };
+
   const handleBackClick = () => {
+    if (onBackClick) {
+      onBackClick();
+    }
+  };
+
+  const handleProceedClick = () => {
     if (onBackClick) {
       onBackClick();
     }
@@ -35,7 +46,25 @@ function Origine({ onBackClick }) {
                 <div className="romb3">
                   <button className="intro-type-btn" onClick={handleTypeClick}>CLICK TO TYPE</button>
                   <span className="rombus-text">Where Are You From?</span>
-                  {showSearchBar && <SearchBar initialOpen={true} />}
+                  {showSearchBar && (
+                    <input
+                      type="text"
+                      className="response-input"
+                      placeholder="Type your response..."
+                      onChange={handleInputChange}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' && hasSearchText && onBackClick) {
+                          onBackClick();
+                        }
+                      }}
+                      autoFocus
+                    />
+                  )}
+                  {showSearchBar && hasSearchText && (
+                    <button className="proceed-btn" onClick={handleProceedClick}>
+                      <img src={Proceed} alt="Proceed" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
