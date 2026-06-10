@@ -48,9 +48,9 @@
     gap: 16px;
     margin-top: 96px;
     margin-left: 582px;
-    width: 762px;
-    height: 762px;
-    border: 2px dashed #b4b5b6;
+    width: 785px;
+    height: 785px;
+    border: 2px dashed #d7d9dc;
     transform: rotate(45deg);
 }
 
@@ -58,10 +58,10 @@
     display: flex;
     gap: 16px;
     margin-top: 90px;
-    margin-left: 585px;
-    width: 762px;
-    height: 762px;
-    border: 2px dashed #595a5a;
+    margin-left: 562px;
+    width: 808px;
+    height: 808px;
+    border: 2px dashed #e3e5e7;
     transform: rotate(45deg);
 }
 
