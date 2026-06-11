@@ -4,6 +4,7 @@ import BackButton from './assets/backbutton.svg'
 import Reset from './assets/reset.svg'
 import Confirm from './assets/confirm/svg'
 import './demographics.css'
+import PercentCircle from '../../components/percentCircle/percentCircle'
 
 function demographics( onResetClick, onBackClick, onConfirmClick ) {
 
@@ -61,6 +62,7 @@ function demographics( onResetClick, onBackClick, onConfirmClick ) {
             <div className="results-box">
                 <span className="type-race">Type of Race</span>
             </div>
+            <PercentCircle />
         </div>
         </main>
         <footer>

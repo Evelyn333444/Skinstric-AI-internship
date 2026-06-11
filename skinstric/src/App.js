@@ -3,6 +3,9 @@ import './App.css';
 import Home from './pages/home/home';
 import Introduce from './pages/introduction/introduce';
 import Origine from './pages/origine/origine';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import YourTargetComponent from './YourTargetComponent';
+
 
 function App() {
   const [page, setPage] = useState('home');

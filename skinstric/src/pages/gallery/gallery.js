@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './gallery.css'
 import BackButton from './assets/backbutton.svg'
 import ScanFace from './assets/scanFace.svg'
@@ -11,6 +12,14 @@ function gallery({ onBackClick }) {
     }
   };
 
+  const scanFace = () => {
+  const navigate = useNavigate();
+
+  const handleScanTheFace = () => {
+    // Replace '/your-target-route' with the path you defined in your Router
+    navigate('/scanFace');
+  };
+  
   return (
     <div>
       <header>
@@ -29,7 +38,8 @@ function gallery({ onBackClick }) {
                 <div className="gallery-romb2">
                   <div className="gallery-romb3">
                     <div className="gallery-image-wrapper">
-                      <img src={ScanFace} alt="Scan Your Face" className="gallery-image" />
+                       <button className="scan-the-face" onClick={handleScanTheFace}>
+                        </button> 
                     </div>
                   </div>
                 </div>
