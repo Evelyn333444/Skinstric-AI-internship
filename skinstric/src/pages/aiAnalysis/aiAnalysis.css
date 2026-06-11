@@ -39,6 +39,10 @@
     text-transform: uppercase;
 }
 
+.rombus-text:hover {
+    
+}
+
 /* Icons */
 
 .back-button {
@@ -68,4 +72,33 @@
     margin-left: 738.2px;
     transform: rotate(-45deg);
     border: #fcfcfc 0.1px;
+}
+
+/* Shapes */
+
+.romb1 {
+    width: 762px;
+    height: 762px;
+    margin-top: 99px;
+    margin-left: 579px;
+    border: #A0A4AB 2px dashed;
+    transform: rotate(45deg);
+}
+
+.romb2 {
+    width: 762px;
+    height: 762px;
+    margin-top: 105px;
+    margin-left: 576px;
+    border: #c6c8cb 2px dashed;
+    transform: rotate(45deg);
+}
+
+.romb3 {
+    width: 762px;
+    height: 762px;
+    margin-top: 108px;
+    margin-left: 573px;
+    border: #d9dadd 2px dashed;
+    transform: rotate(45deg);
 }

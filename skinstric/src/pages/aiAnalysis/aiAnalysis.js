@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AnalysisHeader from './assets/aiAnalysis.svg'
 import BackButton from './assets/backbutton.svg'
 import GetSummary from './assets/getSummary.svg'
@@ -18,6 +18,8 @@ function aiAnalysis() {
     }
   };
 
+  const [hoverRombText, setHoverRombText] = useState(false);
+
   return (
     <div>
       <header>
@@ -35,9 +37,21 @@ function aiAnalysis() {
         </div>
         </div>
         <div className="body-center">
-            
-            <div className="summary-diagram-icon">
-                <img src={SummaryDiagram} alt="" />
+            <div className="rombuses">
+            {hoverRombText ? (
+            <div className="romb1">
+                <div className="romb2">
+                    <div className="romb3">
+                        <div className="summary-diagram-icon">
+                            <img src={SummaryDiagram} alt=""
+                            onMouseEnter={() => setHoverRombText(true)}
+                            onMouseLeave={() => setHoverRombText(false)}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            )}
             </div>
         </div>
       </main>
