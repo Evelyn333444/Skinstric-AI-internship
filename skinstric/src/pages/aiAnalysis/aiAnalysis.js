@@ -3,6 +3,7 @@ import AnalysisHeader from './assets/aiAnalysis.svg'
 import BackButton from './assets/backbutton.svg'
 import GetSummary from './assets/getSummary.svg'
 import SummaryDiagram from './assets/summaryDiagram.svg'
+import './aiAnalysis.css'
 
 function aiAnalysis() {
 
