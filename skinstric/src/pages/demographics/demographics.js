@@ -58,6 +58,9 @@ function demographics( onResetClick, onBackClick, onConfirmClick ) {
                 <button className="gender-button">SEX</button>
                 //Again, fix this when you add in the API
             </div>
+            <div className="results-box">
+                <span className="type-race">Type of Race</span>
+            </div>
         </div>
         </main>
         <footer>

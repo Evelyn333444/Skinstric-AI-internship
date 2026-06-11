@@ -56,6 +56,21 @@
     color: #1A1B1C;
 }
 
+.results-box {
+    width: 1168px;
+    height: 544px;
+    margin-top: 304px;
+    margin-left: 256px;
+    background-color: rgb(222, 221, 221);
+}
+
+.type-race {
+    margin-top: 310px;
+    margin-left: 260px;
+    color: black;
+    
+}
+
 /* Footer */
 
 .footer-text-layout {
