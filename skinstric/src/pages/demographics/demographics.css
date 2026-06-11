@@ -55,3 +55,42 @@
     text-transform: uppercase;
     color: #1A1B1C;
 }
+
+/* Buttons */
+
+.back-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 97px;
+    height: 44px;
+    margin-top: 880px;
+    margin-left: 32px;
+    gap: 16px;
+}
+
+.reset-button {
+    width: 73px;
+    height: 35px;
+    margin-top: 889px;
+    margin-left: 1703px;
+    border: 1px #1A1B1C;
+    padding-top: 9px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+}
+
+.confirm-button {
+    width: 95px;
+    height: 35px;
+    margin-top: 889px;
+    margin-left: 1793px;
+    background-color: black;
+    color: white;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 9px;
+}

@@ -2,9 +2,10 @@ import React from 'react'
 import AnalysisHeader from './assets/aiAnalysis.svg'
 import BackButton from './assets/backbutton.svg'
 import Reset from './assets/reset.svg'
+import Confirm from './assets/confirm/svg'
 import './demographics.css'
 
-function demographics( onResetClick, onBackClick ) {
+function demographics( onResetClick, onBackClick, onConfirmClick ) {
 
     const handleBackClick = () => {
     if (onBackClick) {
@@ -15,6 +16,12 @@ function demographics( onResetClick, onBackClick ) {
   const handleResetClick = () => {
     if (onResetClick) {
         onResetClick();
+    }
+  }
+
+  const handleConfirmClick = () => {
+    if (onConfirmClick) {
+        onConfirmClick();
     }
   }
 
@@ -44,6 +51,9 @@ function demographics( onResetClick, onBackClick ) {
                         </button>
             <button className="reset-button" onClick={handleResetClick}>
                 <img src={Reset} alt="" />
+            </button>
+            <button className="confirm-button" onClick={handleConfirmClick}>
+                <img src={Confirm} alt="" />
             </button>
         </footer>
     </div>
