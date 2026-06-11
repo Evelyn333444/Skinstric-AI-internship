@@ -1,0 +1,71 @@
+/* Header */
+
+.header-left {
+    width: 1920px;
+    height: 64px;
+}
+
+/* Body */
+
+.body-left-bold {
+    width: 227px;
+    height: 24px;
+    margin-top: 86px;
+    margin-left: 32px;
+}
+
+.body-left-bold-text {
+    font-weight: 600px;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+}
+
+.body-left-not-bold {
+    width: 336px;
+    height: 48px;
+    margin-top: 118px;
+    margin-left: 32px;
+}
+
+.body-left-not-bold-text {
+    font-weight: 400;
+    font-style: regular;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+/* Icons */
+
+.back-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 97px;
+    height: 44px;
+    margin-top: 880px;
+    margin-left: 32px;
+    gap: 16px;
+}
+
+.get-summary-button {
+    width: 155px;
+    height: 44px;
+    margin-top: 880px;
+    margin-left: 1733px;
+    gap: 16px;
+}
+
+.summary-diagram-icon {
+    width: 313.67px;
+    height: 313.67px;
+    margin-top: 258px;
+    margin-left: 738.2px;
+    transform: rotate(-45deg);
+    border: #fcfcfc 0.1px;
+}
