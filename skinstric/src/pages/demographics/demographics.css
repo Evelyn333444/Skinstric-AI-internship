@@ -56,6 +56,24 @@
     color: #1A1B1C;
 }
 
+/* Footer */
+
+.footer-text-layout {
+    width: 317px;
+    height: 24px;
+    margin-top: 894px;
+    margin-left: 821px;
+}
+
+.footer-text {
+    font-weight: 400;
+    font-style: regular;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    color: #A0A4AB;
+}
+
 /* Buttons */
 
 .back-button {
@@ -93,4 +111,61 @@
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 9px;
+}
+
+.east-asian-button {
+    width: 208px;
+    height: 104px;
+    margin-top: 304px;
+    margin-left: 32px;
+    background-color: white;
+    color: black;
+}
+
+.east-asian-button:hover {
+    background-color: rgba(180, 177, 177, 0.564);
+    color: black;
+}
+
+.east-asian-button:active {
+    background-color: black;
+    color: white;
+}
+
+.age-button {
+    width: 208px;
+    height: 104px;
+    margin-top: 416px;
+    left: 32px;
+    background-color: white;
+    color: black;
+}
+
+.age-button:hover {
+    background-color: rgba(180, 177, 177, 0.564);
+    color: black;
+}
+
+.age-button:active {
+    background-color: black;
+    color: white;
+}
+
+.gender-button {
+    width: 208px;
+    height: 104px;
+    margin-top: 528px;
+    margin-left: 32px;
+    background-color: white;
+    color: black;
+}
+
+.gender-button:hover {
+    background-color: rgba(180, 177, 177, 0.564);
+    color: black;
+}
+
+.gender-button:active {
+    background-color: black;
+    color: white;
 }
