@@ -65,6 +65,6 @@ function gallery({ onBackClick }) {
             </footer>
     </div>
   )
-}
+}}
 
 export default gallery

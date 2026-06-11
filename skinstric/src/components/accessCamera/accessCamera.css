@@ -1,0 +1,28 @@
+.pop-up-alert {
+    width: 352px;
+    height: 136px;
+    margin-top: 442px;
+    margin-left: 592px;
+    background-color: black;
+    color: white;
+}
+
+.alert-text {
+    width: 321px;
+    height: 24px;
+    margin-top: 456px;
+    margin-left: 607px;
+}
+
+.alert-question {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: SemiBold;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+.deny-camera {
+    
+}
