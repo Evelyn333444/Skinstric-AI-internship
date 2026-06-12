@@ -1,0 +1,36 @@
+.set-up-camera-icon {
+    width: 152px;
+    height: 152px;
+    margin-top: 405px;
+    margin-left: 884px;
+    border: 1px black;
+}
+
+.romb1 {
+    width: 604.03px;
+    height: 604.03px;
+    margin-top: 111.11px;
+    margin-left: 590.11px;
+    border: 2px dashed #A0A4AB;
+    opacity: 30%;
+    transform: rotate(60deg);
+}
+
+.romb2 {
+    width: 498px;
+    height: 498px;
+    margin-top: 232px;
+    margin-left: 711px;
+    border: 2px dashed #A0A4AB;
+    opacity: 60%;
+    transform: rotate(45deg);
+}
+
+.romb1 {
+    width: 405.18px;
+    height: 405.18px;
+    margin-top: 232.88px;
+    margin-left: 711.88px;
+    border: 2px dashed #A0A4AB;
+    transform: rotate(30deg);
+}
