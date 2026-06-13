@@ -43,8 +43,8 @@ function Introduce({ onBackClick, onSearchSubmit }) {
         <div className="intro-content">
             <div className="rombuses">
                 {hoverRombText ? (
-                  <div className="romb1">
-                    <div className="romb2">
+                  //<div className="romb1">
+                   // <div className="romb2">
                       <div className="romb3">
                         <button className="intro-type-btn" onClick={handleTypeClick}>CLICK TO TYPE</button>
                         <span
@@ -75,8 +75,8 @@ function Introduce({ onBackClick, onSearchSubmit }) {
                         )}
                         {/* Fix the width and height of romb1 and romb2. they should not be the same as romb3, but I have not been able to look at them at a closer level */}
                       </div>
-                    </div>
-                  </div>
+                    //</div>
+                  //</div>
                 ) : (
                   <div className="romb3">
                     <button className="intro-type-btn" onClick={handleTypeClick}>CLICK TO TYPE</button>

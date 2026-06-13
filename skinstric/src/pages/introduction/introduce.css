@@ -81,13 +81,13 @@
   justify-content: center;
 }
 
-.romb2 {
+ .romb2 {
   width: 200px;
   height: 200px;
   border: 2px dashed #dadcdf;
 }
 
-.romb1 {
+ .romb1 {
   width: 180px;
   height: 180px;
   border: 2px dashed #dadcdf;
