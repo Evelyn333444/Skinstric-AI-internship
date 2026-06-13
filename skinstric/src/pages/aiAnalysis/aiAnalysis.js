@@ -5,9 +5,9 @@ import GetSummary from 'assets/getSummary.svg'
 import SummaryDiagram from 'assets/summaryDiagram.svg'
 import './aiAnalysis.css'
 
-function aiAnalysis() {
+function AiAnalysis({ onBackClick, onSearchSubmit }) {
 
-    const handleBackClick = () => {
+  const handleBackClick = () => {
     if (onBackClick) {
       onBackClick();
     }
@@ -68,4 +68,4 @@ function aiAnalysis() {
   )
 }
 
-export default aiAnalysis
+export default AiAnalysis

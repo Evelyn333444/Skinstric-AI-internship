@@ -5,21 +5,19 @@ import BackButton from 'assets/backbutton.svg'
 import ScanFace from 'assets/scanFace.svg'
 import AccessGallery from 'assets/accessGallery.svg'
 
-function gallery({ onBackClick }) {
+function Gallery({ onBackClick }) {
+  const navigate = useNavigate();
+
   const handleBackClick = () => {
     if (onBackClick) {
       onBackClick();
     }
   };
 
-  const scanFace = () => {
-  const navigate = useNavigate();
-
   const handleScanTheFace = () => {
-    // Replace '/your-target-route' with the path you defined in your Router
     navigate('/scanFace');
   };
-  
+
   return (
     <div>
       <header>
@@ -39,7 +37,8 @@ function gallery({ onBackClick }) {
                   <div className="gallery-romb3">
                     <div className="gallery-image-wrapper">
                        <button className="scan-the-face" onClick={handleScanTheFace}>
-                        </button> 
+                         <img src={ScanFace} alt="Scan Face" className="gallery-image" />
+                       </button>
                     </div>
                   </div>
                 </div>
@@ -65,6 +64,6 @@ function gallery({ onBackClick }) {
             </footer>
     </div>
   )
-}}
+}
 
-export default gallery
+export default Gallery

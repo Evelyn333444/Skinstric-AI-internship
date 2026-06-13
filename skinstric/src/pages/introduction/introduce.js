@@ -3,7 +3,7 @@ import './introduce.css'
 import BackButton from 'assets/backbutton.svg'
 import Proceed from 'assets/proceed.svg'
 
-function introduce({ onBackClick, onSearchSubmit }) {
+function Introduce({ onBackClick, onSearchSubmit }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [hasSearchText, setHasSearchText] = useState(false);
   const [hoverRombText, setHoverRombText] = useState(false);
@@ -121,4 +121,4 @@ function introduce({ onBackClick, onSearchSubmit }) {
   )
 }
 
-export default introduce
+export default Introduce

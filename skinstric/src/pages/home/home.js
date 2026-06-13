@@ -5,7 +5,7 @@ import taketest from 'assets/taketest.svg'
 import HomeToIntro from '../homeToIntro/homeToIntro'
 import ExpandingRect from '../../components/expandRectangle/expandRectangle'
 
-function home({ onTakeTestClick }) {
+function Home({ onTakeTestClick }) {
   const [showPreview, setShowPreview] = useState(false);
 
   return (
@@ -50,4 +50,4 @@ function home({ onTakeTestClick }) {
   )
 }
 
-export default home
+export default Home
