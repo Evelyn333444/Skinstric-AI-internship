@@ -4,7 +4,6 @@
   align-items: center;
   width: 100%;
   height: 64px;
-  padding: 0 28px;
   box-sizing: border-box;
 }
 
@@ -26,13 +25,12 @@
 }
 
 .intro-text {
-    font-weight: 600px;
-    font-style: SemiBold;
-    size: 16px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    text-transform: uppercase;
-    color: #1A1B1C;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #1A1B1C;
 }
 
 .rombus-text {
@@ -47,30 +45,24 @@
 /* Shapes */
 
 .romb3 {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    height: 50%;
-    border: 2px dashed #dadcdf;
-    transform: rotate(45deg);
+  width: 320px;
+  height: 320px;
+  border: 2px dashed #dadcdf;
+  transform: rotate(45deg);
 }
 
 .romb2 {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    height: 50%;
-    border: 2px dashed #d7d9dc;
-    transform: rotate(45deg);
+    width: 300px;
+  height: 300px;
+  border: 2px dashed #dadcdf;
+  transform: rotate(45deg);
 }
 
 .romb1 {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    height: 50%;
-    border: 2px dashed #e3e5e7;
-    transform: rotate(45deg);
+    width: 280px;
+  height: 280px;
+  border: 2px dashed #dadcdf;
+  transform: rotate(45deg);
 }
 
 /* Icons */
