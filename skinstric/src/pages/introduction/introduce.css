@@ -5,10 +5,8 @@
 }
 
 .body-left-intro {
-    width: 227px;
-    height: 24px;
-    margin-top: 86px;
-    margin-left: 32px;
+    width: 100%;
+    height: 50%;
 }
 
 .intro-text {
@@ -35,10 +33,8 @@
 .romb3 {
     display: flex;
     gap: 16px;
-    margin-top: 99px;
-    margin-left: 579px;
-    width: 762px;
-    height: 762px;
+    width: 100%;
+    height: 50%;
     border: 2px dashed #dadcdf;
     transform: rotate(45deg);
 }
@@ -46,10 +42,8 @@
 .romb2 {
     display: flex;
     gap: 16px;
-    margin-top: 96px;
-    margin-left: 582px;
-    width: 785px;
-    height: 785px;
+    width: 100%;
+    height: 50%;
     border: 2px dashed #d7d9dc;
     transform: rotate(45deg);
 }
@@ -57,10 +51,8 @@
 .romb1 {
     display: flex;
     gap: 16px;
-    margin-top: 90px;
-    margin-left: 562px;
-    width: 808px;
-    height: 808px;
+    width: 100%;
+    height: 50%;
     border: 2px dashed #e3e5e7;
     transform: rotate(45deg);
 }
@@ -72,18 +64,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 97px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 32px;
+    width: 100%;
+    height: 50%;
     gap: 16px;
 }
 
 .proceed {
-    width: 123px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 1765px;
+    width: 100%;
+    height: 50%;
     gap: 16px;
 }
 
@@ -95,10 +83,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 123px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 1765px;
+    width: 100%;
+    height: 50%;
 }
 
 .proceed-btn:hover img {
@@ -117,7 +103,7 @@
     border-radius: 4px;
     font-size: 14px;
     outline: none;
-    width: 250px;
+    width: 100%;
     font-family: Arial, sans-serif;
 }
 

@@ -21,9 +21,9 @@ function Home({ onTakeTestClick }) {
       </header>
       <main className="home-main">
         <div className="body-left">
-          <div className="rectangle-2779">
+          <ExpandingRect>
             <img src={discoverai} className="discover-ai-logo" alt="Discover AI" />
-          </div>
+          </ExpandingRect>
         </div>
         <div className="body-content">
             <span className="center-text">Sophisticated Skincare</span>

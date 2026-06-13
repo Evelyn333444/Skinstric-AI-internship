@@ -114,7 +114,7 @@ function Introduce({ onBackClick, onSearchSubmit }) {
         </div>
         <footer>
             <button className="back-button" onClick={handleBackClick}>
-              <img src={BackButton} alt="Back" />
+              <img src={BackButton} alt="" />
             </button>
         </footer>
     </div>
