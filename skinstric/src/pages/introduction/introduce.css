@@ -33,6 +33,25 @@
   color: #1A1B1C;
 }
 
+.intro-content {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rombuses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rombuses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .rombus-text {
     cursor: pointer;
     transition: text-decoration 0.3s ease;
@@ -49,6 +68,9 @@
   height: 320px;
   border: 2px dashed #dadcdf;
   transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .romb2 {
