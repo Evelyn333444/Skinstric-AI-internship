@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './gallery.css'
-import BackButton from './assets/backbutton.svg'
-import ScanFace from './assets/scanFace.svg'
-import AccessGallery from './assets/accessGallery.svg'
+import BackButton from 'assets/backbutton.svg'
+import ScanFace from 'assets/scanFace.svg'
+import AccessGallery from 'assets/accessGallery.svg'
 
 function gallery({ onBackClick }) {
   const handleBackClick = () => {

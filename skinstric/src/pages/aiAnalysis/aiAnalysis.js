@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import AnalysisHeader from './assets/aiAnalysis.svg'
-import BackButton from './assets/backbutton.svg'
-import GetSummary from './assets/getSummary.svg'
-import SummaryDiagram from './assets/summaryDiagram.svg'
+import AnalysisHeader from 'assets/analysisHeader.svg'
+import BackButton from 'assets/backbutton.svg'
+import GetSummary from 'assets/getSummary.svg'
+import SummaryDiagram from 'assets/summaryDiagram.svg'
 import './aiAnalysis.css'
 
 function aiAnalysis() {
@@ -39,7 +39,7 @@ function aiAnalysis() {
         </div>
         <div className="body-center">
             <div className="rombuses">
-            {hoverRombText ? (
+            {hoverRombText && (
             <div className="romb1">
                 <div className="romb2">
                     <div className="romb3">

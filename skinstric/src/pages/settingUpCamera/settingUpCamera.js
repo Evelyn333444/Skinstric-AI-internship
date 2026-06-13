@@ -1,6 +1,6 @@
 import React from 'react'
-import SetUpCamera from './assets/setupcamera.svg'
-import SetUpCameraBetterResults from './assets/setUpCameraBetterResults.svg'
+import SetUpCamera from 'assets/setupcamera.svg'
+import SetUpCameraBetterResults from 'assets/setUpCameraBetterResults.svg'
 
 function settingUpCamera() {
 

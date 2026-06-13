@@ -1,8 +1,8 @@
 import React from 'react'
-import AnalysisHeader from './assets/aiAnalysis.svg'
-import BackButton from './assets/backbutton.svg'
-import Reset from './assets/reset.svg'
-import Confirm from './assets/confirm/svg'
+import AnalysisHeader from 'assets/analysisHeader.svg'
+import BackButton from 'assets/backbutton.svg'
+import Reset from 'assets/reset.svg'
+import Confirm from 'assets/confirm.svg'
 import './demographics.css'
 import PercentCircle from '../../components/percentCircle/percentCircle'
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import BackButton from './assets/backbutton.svg'
+import BackButton from 'assets/backbutton.svg'
 import './origine.css'
-import Proceed from './assets/proceed.svg'
+import Proceed from 'assets/proceed.svg'
 
 function Origine({ onBackClick }) {
   const [showSearchBar, setShowSearchBar] = useState(false);

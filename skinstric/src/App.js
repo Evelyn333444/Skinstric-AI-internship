@@ -3,18 +3,12 @@ import './App.css';
 import Home from './pages/home/home';
 import Introduce from './pages/introduction/introduce';
 import Origine from './pages/origine/origine';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import YourTargetComponent from './YourTargetComponent';
-
+import Gallery from './pages/gallery/gallery';
+import AIAnalysis from './pages/aiAnalysis/aiAnalysis';
+import Demographics from './pages/demographics/demographics';
 
 function App() {
   const [page, setPage] = useState('home');
-
-  <BrowserRouter>
-  <Routes>
-    <Route path="/your-target-route" element={<YourTargetComponent />} />
-  </Routes>
-</BrowserRouter>
 
   return (
     <div className="App">

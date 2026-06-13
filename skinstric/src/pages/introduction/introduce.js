@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './introduce.css'
-import BackButton from './assets/backbutton.svg'
-import Proceed from './assets/proceed.svg'
+import BackButton from 'assets/backbutton.svg'
+import Proceed from 'assets/proceed.svg'
 
 function introduce({ onBackClick, onSearchSubmit }) {
   const [showSearchBar, setShowSearchBar] = useState(false);

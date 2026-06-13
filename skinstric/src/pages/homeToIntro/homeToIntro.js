@@ -1,5 +1,5 @@
 import React from 'react'
-import taketest from '../home/assets/taketest.svg'
+import taketest from 'assets/taketest.svg'
 import './homeToIntro.css'
 
 function HomeToIntro({ onTakeTestClick }) {

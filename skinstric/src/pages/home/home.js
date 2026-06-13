@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './home.css'
-import discoverai from './assets/discoverai.svg'
-import taketest from './assets/taketest.svg'
+import discoverai from 'assets/discoverai.svg'
+import taketest from 'assets/taketest.svg'
 import HomeToIntro from '../homeToIntro/homeToIntro'
 import ExpandingRect from '../../components/expandRectangle/expandRectangle'
 
