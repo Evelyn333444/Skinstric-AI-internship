@@ -87,6 +87,13 @@
 
 /* Icons */
 
+.rombus-text,
+.intro-type-btn,
+.response-input,
+.proceed-btn {
+  transform: rotate(-45deg);
+}
+
 .back-button {
     display: flex;
     flex-direction: row;
