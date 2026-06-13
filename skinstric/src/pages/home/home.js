@@ -33,11 +33,6 @@ function Home({ onTakeTestClick }) {
             <ExpandingRect onClick={onTakeTestClick}>
               <img src={taketest} className="take-test-logo" alt="Take Test" />
             </ExpandingRect>
-            {showPreview && (
-              <div className="home-preview-wrapper">
-                <HomeToIntro onTakeTestClick={onTakeTestClick} />
-              </div>
-            )}
           </div>
         </div>
       </div>
