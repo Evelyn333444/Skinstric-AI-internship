@@ -33,8 +33,14 @@
   color: #1A1B1C;
 }
 
+.intro-page {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
 .intro-content {
-  min-height: 70vh;
+  height: calc(100vh - 120px);
   display: flex;
   align-items: center;
   justify-content: center;

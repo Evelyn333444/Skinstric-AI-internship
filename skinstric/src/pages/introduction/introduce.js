@@ -29,7 +29,7 @@ function Introduce({ onBackClick, onSearchSubmit }) {
   };
 
   return (
-    <div>
+    <div className="intro-page">
         <header>
         <div className="header-left-intro">
           <span className="header-title">SKINSTRIC</span>
