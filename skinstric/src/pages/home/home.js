@@ -19,7 +19,7 @@ function Home({ onTakeTestClick }) {
           <button className="enter-code-btn">ENTER CODE</button>
         </div>
       </header>
-      <div>
+      <main className="home-main">
         <div className="body-left">
           <div className="rectangle-2779">
             <img src={discoverai} className="discover-ai-logo" alt="Discover AI" />
@@ -31,11 +31,11 @@ function Home({ onTakeTestClick }) {
         <div className="body-right">
           <div className="take-test-hover-area" onMouseEnter={() => setShowPreview(true)} onMouseLeave={() => setShowPreview(false)}>
             <ExpandingRect onClick={onTakeTestClick}>
-              <img src={taketest} className="take-test-logo" alt="Take Test" />
+              <img src={taketest} className="take-test-logo" alt="" />
             </ExpandingRect>
           </div>
         </div>
-      </div>
+        </main>
       <footer>
          <div className="footer-content">
             <span className="footer-text">SKINSTRIC DEVELOPED AN A.I. THAT CREATES A HIGHLY-PERSONALIZED ROUTINE TAILORED TO WHAT YOUR SKIN NEEDS.</span>
