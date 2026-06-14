@@ -42,7 +42,6 @@ function Origine({ onBackClick }) {
         </div>
         <div className="intro-content">
           <div className="rombuses">
-            {hoverRombText ? (
               <div className="romb1">
                 <div className="romb2">
                   <div className="romb3">

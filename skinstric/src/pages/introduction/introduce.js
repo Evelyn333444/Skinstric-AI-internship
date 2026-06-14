@@ -39,40 +39,40 @@ function Introduce({ onBackClick, onSearchSubmit }) {
         <div className="body-left-intro">
           <span className="intro-text">TO START ANALYSIS</span>
         </div>
-<div className="intro-content">
-  <div className="rombuses">
-    <div className="romb3">
-      <div className="rombus-inner">
-        {!showSearchBar ? (
-          <>
-            <button className="intro-type-btn" onClick={handleTypeClick}>
-              CLICK TO TYPE
-            </button>
-            <span className="rombus-text">
-              Introduce Yourself
-            </span>
-          </>
-        ) : (
-          <input
-            type="text"
-            className="response-input"
-            placeholder="Type your response..."
-            onChange={handleInputChange}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && hasSearchText && onSearchSubmit) {
-                onSearchSubmit();
-              }
-            }}
-            autoFocus
-          />
-        )}
-        {showSearchBar && hasSearchText && (
-          <button className="proceed-btn" onClick={handleProceedClick}>
-            <img src={Proceed} alt="Proceed" />
-          </button>
-        )}
-      </div>
-    </div>
+
+              <div className={`intro-content ${showSearchBar ? "is-typing" : "is-intro"}`}>
+  <div className={`rombuses ${showSearchBar ? "typing-rombuses" : "intro-rombuses"}`}>
+    <div className="romb1" />
+    <div className="romb2" />
+    <div className="romb3" />
+  </div>
+  <div className="intro-form">
+    {!showSearchBar ? (
+      <>
+        <button className="intro-type-btn" onClick={handleTypeClick}>
+          CLICK TO TYPE
+        </button>
+        <span className="rombus-text">Introduce Yourself</span>
+      </>
+    ) : (
+      <input
+        type="text"
+        className="response-input"
+        placeholder="Type your response..."
+        onChange={handleInputChange}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && hasSearchText && onSearchSubmit) {
+            onSearchSubmit();
+          }
+        }}
+        autoFocus
+      />
+    )}
+    {showSearchBar && hasSearchText && (
+      <button className="proceed-btn" onClick={handleProceedClick}>
+        <img src={Proceed} alt="Proceed" />
+      </button>
+    )}
   </div>
 </div>
       </div>
