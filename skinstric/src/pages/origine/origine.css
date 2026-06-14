@@ -37,6 +37,15 @@
   justify-content: center;
 }
 
+.intro-type-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1B1C;
+}
+
 .rombuses {
   display: flex;
   align-items: center;
