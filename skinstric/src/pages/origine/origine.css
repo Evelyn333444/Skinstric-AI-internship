@@ -5,20 +5,24 @@
 }
 
 .body-left-intro {
-    width: 227px;
-    height: 24px;
-    margin-top: 86px;
-    margin-left: 32px;
+    width: 100%;
+    height: 50%;
 }
 
 .intro-text {
-    font-weight: 600px;
-    font-style: SemiBold;
-    size: 16px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    text-transform: uppercase;
-    color: #1A1B1C;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #1A1B1C;
+}
+
+.intro-content {
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rombus-text {
@@ -33,36 +37,37 @@
 /* Shapes */
 
 .romb3 {
-    display: flex;
-    gap: 16px;
-    margin-top: 99px;
-    margin-left: 579px;
-    width: 762px;
-    height: 762px;
-    border: 2px dashed #dadcdf;
-    transform: rotate(45deg);
+  width: 300px;
+  height: 300px;
+  border: 2px dashed #dadcdf;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.romb2 {
-    display: flex;
-    gap: 16px;
-    margin-top: 96px;
-    margin-left: 582px;
-    width: 762px;
-    height: 762px;
-    border: 2px dashed #b4b5b6;
-    transform: rotate(45deg);
+ .romb2 {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #dadcdf;
 }
 
-.romb1 {
-    display: flex;
-    gap: 16px;
-    margin-top: 90px;
-    margin-left: 585px;
-    width: 762px;
-    height: 762px;
-    border: 2px dashed #595a5a;
-    transform: rotate(45deg);
+ .romb1 {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed #dadcdf;
+}
+
+.rombus-inner {
+  transform: rotate(-45deg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
 }
 
 /* Icons */
@@ -80,25 +85,25 @@
 }
 
 .proceed {
-    width: 123px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 1765px;
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
     gap: 16px;
 }
 
 .proceed-btn {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 123px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 1765px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .proceed-btn:hover img {
