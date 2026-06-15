@@ -9,6 +9,7 @@ import Demographics from './pages/demographics/demographics';
 import SelectPhoto from './components/selectPhoto/selectPhoto';
 import ChosenPhoto from './pages/chosenPhoto/chosenPhoto';
 import ScanFace from './components/scanFace/scanFace';
+import ScannedFaceFullScreen from './pages/scannedFaceFullScreen/scannedFaceFullScreen';
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
@@ -23,6 +24,7 @@ function App() {
     () => sessionStorage.getItem(SKINSTRIC_USER_LOCATION_KEY) || ''
   );
   const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [scannedPhoto, setScannedPhoto] = useState(null);
   const [photoBackPage, setPhotoBackPage] = useState('selectPhoto');
 
   return (
@@ -57,10 +59,15 @@ function App() {
         <ScanFace
           onBackClick={() => setPage('gallery')}
           onPhotoCaptured={(photo) => {
-            setSelectedPhoto(photo);
-            setPhotoBackPage('scanFace');
-            setPage('chosenPhoto');
+            setScannedPhoto(photo);
+            setPage('scannedFaceFullScreen');
           }}
+        />
+      )}
+      {page === 'scannedFaceFullScreen' && (
+        <ScannedFaceFullScreen
+          scannedPhoto={scannedPhoto}
+          onBackClick={() => setPage('scanFace')}
         />
       )}
       {page === 'selectPhoto' && (

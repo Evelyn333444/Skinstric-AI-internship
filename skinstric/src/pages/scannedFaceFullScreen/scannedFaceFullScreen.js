@@ -1,60 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
+import BackButton from 'assets/backbutton.svg';
 import './scannedFaceFullScreen.css';
 
-export default function ScannedFaceFullScreen() {
-  const [imageSrc, setImageSrc] = useState(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-
-  // Handle the file upload or scanned image input
-  const handleImageCapture = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type.startsWith('image/')) {
-      // Create a temporary local URL for the file object
-      const objectUrl = URL.createObjectURL(file);
-      setImageSrc(objectUrl);
-      setIsFullscreen(true); // Automatically open full screen once captured
+function ScannedFaceFullScreen({ scannedPhoto, onBackClick }) {
+  const handleBackClick = () => {
+    if (onBackClick) {
+      onBackClick();
     }
   };
 
-  const closeFullscreen = () => {
-    setIsFullscreen(false);
-  };
-
   return (
-    <div className="container">
-      {/* File input. Use accept="image/*" and capture="environment" to trigger the device camera */}
-      <label className="upload-btn">
-        Scan / Upload Image
-        <input 
-          type="file" 
-          accept="image/*" 
-          capture="environment" 
-          onChange={handleImageCapture} 
-          style={{ display: 'none' }}
+    <div className="scanned-face-page">
+      {scannedPhoto ? (
+        <img
+          src={scannedPhoto}
+          alt="Scanned face"
+          className="scanned-face-image"
         />
-      </label>
-
-      {/* Standard Preview Area */}
-      {imageSrc && !isFullscreen && (
-        <div className="preview-box">
-          <img src={imageSrc} alt="Scanned preview" onClick={() => setIsFullscreen(true)} />
-          <p>Click image to view full screen</p>
+      ) : (
+        <div className="scanned-face-empty">
+          <p>No scanned photo</p>
         </div>
       )}
-
-       {/* Full Screen Modal Overlay */}
-      {isFullscreen && imageSrc && (
-        <div className="fullscreen-overlay" onClick={closeFullscreen}>
-          <button className="close-btn" onClick={closeFullscreen}>&times;</button>
-          <img 
-            src={imageSrc} 
-            alt="Scanned Full Screen" 
-            className="fullscreen-image"
-            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking the image itself
-          />
-        </div>
-      )}
+      <footer className="scanned-face-footer">
+        <button type="button" className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="Back" />
+        </button>
+      </footer>
     </div>
   );
 }
 
+export default ScannedFaceFullScreen;
