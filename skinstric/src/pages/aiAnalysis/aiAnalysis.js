@@ -43,12 +43,14 @@ function AiAnalysis({ onBackClick, onSearchSubmit }) {
             <div className="romb1">
                 <div className="romb2">
                     <div className="romb3">
+                      <div className="summary-diagram-container">
                         <div className="summary-diagram-icon">
                             <img src={SummaryDiagram} alt=""
                             onMouseEnter={() => setHoverRombText(true)}
                             onMouseLeave={() => setHoverRombText(false)}
                             />
                         </div>
+                      </div>
                     </div>
                 </div>
             </div>

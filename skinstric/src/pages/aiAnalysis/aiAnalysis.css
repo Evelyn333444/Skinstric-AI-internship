@@ -1,17 +1,20 @@
 /* Header */
 
 .header-left {
-    width: 1920px;
-    height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 /* Body */
 
+.body-left {
+  left: 28px;
+}
+
 .body-left-bold {
-    width: 227px;
-    height: 24px;
-    margin-top: 86px;
-    margin-left: 32px;
+    width: 100%;
+    height: 50%;
 }
 
 .body-left-bold-text {
@@ -24,10 +27,8 @@
 }
 
 .body-left-not-bold {
-    width: 336px;
-    height: 48px;
-    margin-top: 118px;
-    margin-left: 32px;
+    width: 100%;
+    height: 50%;
 }
 
 .body-left-not-bold-text {
@@ -39,10 +40,6 @@
     text-transform: uppercase;
 }
 
-.rombus-text:hover {
-    
-}
-
 /* Icons */
 
 .back-button {
@@ -50,55 +47,56 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 97px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 32px;
+    width: 100%;
+    height: 50%;
     gap: 16px;
 }
 
 .get-summary-button {
-    width: 155px;
-    height: 44px;
-    margin-top: 880px;
-    margin-left: 1733px;
+    width: 100%;
+    height: 50%;
     gap: 16px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.summary-diagram-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  width: 100vw;            
+  height: 100vh; 
 }
 
 .summary-diagram-icon {
-    width: 313.67px;
-    height: 313.67px;
-    margin-top: 258px;
-    margin-left: 738.2px;
-    transform: rotate(-45deg);
-    border: #fcfcfc 0.1px;
+  width: 50%;              
+  max-width: 800px;       
+  height: auto;            
+  object-fit: contain; 
+  border: #fcfcfc 0.1px;
 }
 
 /* Shapes */
 
-.romb1 {
-    width: 762px;
-    height: 762px;
-    margin-top: 99px;
-    margin-left: 579px;
-    border: #A0A4AB 2px dashed;
-    transform: rotate(45deg);
-}
-
-.romb2 {
-    width: 762px;
-    height: 762px;
-    margin-top: 105px;
-    margin-left: 576px;
-    border: #c6c8cb 2px dashed;
-    transform: rotate(45deg);
-}
-
 .romb3 {
-    width: 762px;
-    height: 762px;
-    margin-top: 108px;
-    margin-left: 573px;
-    border: #d9dadd 2px dashed;
-    transform: rotate(45deg);
+  width: 300px;
+  height: 300px;
+  border: 2px dashed #dadcdf;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .romb2 {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #dadcdf;
+}
+
+ .romb1 {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed #dadcdf;
 }
