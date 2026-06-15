@@ -69,26 +69,35 @@ function demographics( onResetClick, onBackClick, onConfirmClick ) {
                 <div className="ai-confidence">
                     <span className="title-row-text">A.I. CONFIDENCE</span>
                 </div>
+                <div className="types">
                 <div className="type-1">
                     <span className="type-1-classification">RACE #1</span>
+                    <span className="type-1-percentage">96%</span>
                 </div>
                 <div className="type-2">
                     <span className="type-2-classification">RACE #2</span>
+                    <span className="type-2-percentage">6%</span>
                 </div>
                 <div className="type-3">
                     <span className="type-3-classification">RACE #3</span>
+                    <span className="type-3-percentage">3%</span>
                 </div>
                 <div className="type-4">
                     <span className="type-4-classification">RACE #4</span>
+                    <span className="type-4-percentage">2%</span>
                 </div>
                 <div className="type-5">
                     <span className="type-5-classification">RACE #5</span>
+                    <span className="type-5-percentage">0%</span>
                 </div>
                 <div className="type-6">
                     <span className="type-6-classification">RACE #6</span>
+                    <span className="type-6-percentage">0%</span>
                 </div>
                 <div className="type-7">
                     <span className="type-7-classification">RACE #7</span>
+                    <span className="type-7-percentage">0%</span>
+                </div>
                 </div>
             </div>
         </div>

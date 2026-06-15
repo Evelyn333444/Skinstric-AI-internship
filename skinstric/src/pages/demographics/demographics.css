@@ -89,6 +89,11 @@
     border-color: none;
 }
 
+.ai-confidence {
+    width: 100%;
+    height: 10%;
+}
+
 .title-row-text {
     color: black;
     font-size: 8px;
@@ -97,12 +102,143 @@
     font-style: regular;
 }
 
+.types {
+    width: 100%;
+    height: 90%;
+
+}
+
 .type-1 {
-    color: rgb(222, 221, 221);
+    background-color: rgb(222, 221, 221);
+    color: black;
     width: 100%;
     height: 10%;
     position: fixed;
+    justify-content: space-between;
 }
+
+.type-2 {
+    background-color: rgb(222, 221, 221);
+    color: black;
+    width: 100%;
+    height: 20%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-3 {
+    background-color: rgb(222, 221, 221);
+    color: black;
+    width: 100%;
+    height: 30%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-4 {
+    background-color: rgb(222, 221, 221);
+    color: black;
+    width: 100%;
+    height: 40%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-5 {
+    background-color: rgb(222, 221, 221);
+    color: black;
+    width: 100%;
+    height: 50%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-6 {
+    background-color: rgb(222, 221, 221);
+    color: black;
+    width: 100%;
+    height: 60%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-7 {
+    background-color: rgb(222, 221, 221);
+    color: black;
+    width: 100%;
+    height: 70%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-1-classification,
+.type-2-classification,
+.type-3-classification,
+.type-4-classification,
+.type-5-classification,
+.type-6-classification,
+.type-7-classification {
+    color: black;
+    font-style: regular;
+    font-weight: 10;
+    letter-spacing: -2%;
+    font-size: 8px;
+}
+
+.type-1-percentage,
+.type-2-percentage,
+.type-3-percentage,
+.type-4-percentage,
+.type-5-percentage,
+.type-6-percentage,
+.type-7-percentage {
+    color: black;
+    font-style: regular;
+    font-weight: 10;
+    letter-spacing: -2%;
+    font-size: 8px;
+}
+
+.type-1:active {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.type-1-classification:active,
+.type-2-classification:active,
+.type-3-classification:active,
+.type-4-classification:active,
+.type-5-classification:active,
+.type-6-classification:active,
+.type-7-classification:active
+ {
+    color: white;
+    font-style: regular;
+    font-weight: 10;
+    letter-spacing: -2%;
+    font-size: 8px;
+}
+
+.type-1-percentage:active,
+.type-2-percentage:active,
+.type-3-percentage:active,
+.type-4-percentage:active,
+.type-5-percentage:active,
+.type-6-percentage:active,
+.type-7-percentage:active
+ {
+    color: white;
+    font-style: regular;
+    font-weight: 10;
+    letter-spacing: -2%;
+    font-size: 8px;
+}
+
+
 
 /* Footer */
 
