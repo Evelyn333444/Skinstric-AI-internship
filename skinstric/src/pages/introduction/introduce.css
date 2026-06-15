@@ -172,3 +172,19 @@
 .response-input::placeholder {
   color: #9ca3af;
 }
+
+.api-error-message,
+.api-loading-message {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.api-error-message {
+  color: #c0392b;
+}
+
+.api-loading-message {
+  color: #666;
+}

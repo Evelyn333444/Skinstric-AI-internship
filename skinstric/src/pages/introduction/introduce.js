@@ -3,16 +3,21 @@ import './introduce.css'
 import BackButton from 'assets/backbutton.svg'
 import Proceed from 'assets/proceed.svg'
 
+export const SKINSTRIC_USER_NAME_KEY = 'skinstricPhaseOneName';
+
 function Introduce({ onBackClick, onSearchSubmit }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
-  const [hasSearchText, setHasSearchText] = useState(false);
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+  const hasSearchText = name.trim().length > 0;
 
   const handleTypeClick = () => {
     setShowSearchBar(true);
   };
 
   const handleInputChange = (e) => {
-    setHasSearchText(e.target.value.length > 0);
+    setName(e.target.value);
+    setError('');
   };
 
   const handleBackClick = () => {
@@ -21,9 +26,17 @@ function Introduce({ onBackClick, onSearchSubmit }) {
     }
   };
 
-  const handleProceedClick = () => {
+  const handleProceedClick = async () => {
+    const trimmedName = name.trim();
+    if (!trimmedName) {
+      setError('Please enter your name.');
+      return;
+    }
+
+    sessionStorage.setItem(SKINSTRIC_USER_NAME_KEY, trimmedName);
+
     if (onSearchSubmit) {
-      onSearchSubmit();
+      onSearchSubmit(trimmedName);
     }
   };
 
@@ -59,15 +72,17 @@ function Introduce({ onBackClick, onSearchSubmit }) {
         type="text"
         className="response-input"
         placeholder="Type your response..."
+        value={name}
         onChange={handleInputChange}
         onKeyDown={(e) => {
-          if (e.key === "Enter" && hasSearchText && onSearchSubmit) {
-            onSearchSubmit();
+          if (e.key === "Enter" && hasSearchText) {
+            handleProceedClick();
           }
         }}
         autoFocus
       />
     )}
+    {error && <span className="api-error-message">{error}</span>}
     {showSearchBar && hasSearchText && (
       <button className="proceed-btn" onClick={handleProceedClick}>
         <img src={Proceed} alt="Proceed" />

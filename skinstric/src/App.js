@@ -14,7 +14,12 @@ function App() {
     <div className="App">
       {page === 'home' && <Home onTakeTestClick={() => setPage('intro')} />}
       {page === 'intro' && <Introduce onBackClick={() => setPage('home')} onSearchSubmit={() => setPage('origine')} />}
-      {page === 'origine' && <Origine onBackClick={() => setPage('intro')} />}
+      {page === 'origine' && (
+        <Origine
+          onBackClick={() => setPage('intro')}
+          onProceedSuccess={() => setPage('gallery')}
+        />
+      )}
       {page === 'gallery' && <Gallery onBackClick={() => setPage('origine')} />}
       {page === 'aiAnalysis' && <AIAnalysis onBackClick={() => setPage('gallery')} />}
       {page === 'demographics' && <Demographics onBackClick={() => setPage('aiAnalysis')} />}

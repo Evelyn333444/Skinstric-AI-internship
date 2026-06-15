@@ -2,18 +2,25 @@ import React, { useState } from 'react'
 import BackButton from 'assets/backbutton.svg'
 import './origine.css'
 import Proceed from 'assets/proceed.svg'
+import { SKINSTRIC_USER_NAME_KEY } from '../introduction/introduce'
 
-function Origine({ onBackClick }) {
+const PHASE_ONE_API = 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne';
+
+function Origine({ onBackClick, onProceedSuccess }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
-  const [hasSearchText, setHasSearchText] = useState(false);
+  const [location, setLocation] = useState('');
   const [hoverRombText, setHoverRombText] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+  const hasSearchText = location.trim().length > 0;
 
   const handleTypeClick = () => {
     setShowSearchBar(true);
   };
 
   const handleInputChange = (e) => {
-    setHasSearchText(e.target.value.length > 0);
+    setLocation(e.target.value);
+    setError('');
   };
 
   const handleBackClick = () => {
@@ -22,9 +29,50 @@ function Origine({ onBackClick }) {
     }
   };
 
+  const submitCredentials = async () => {
+    const name = sessionStorage.getItem(SKINSTRIC_USER_NAME_KEY);
+    const trimmedLocation = location.trim();
+
+    if (!name) {
+      setError('Please enter your name on the previous screen.');
+      return;
+    }
+
+    if (!trimmedLocation) {
+      setError('Please enter your location.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch(PHASE_ONE_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, location: trimmedLocation }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        setError(data.message || 'Unable to submit credentials.');
+        return;
+      }
+
+      if (onProceedSuccess) {
+        onProceedSuccess();
+      }
+    } catch {
+      setError('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleProceedClick = () => {
-    if (onBackClick) {
-      onBackClick();
+    if (!isSubmitting) {
+      submitCredentials();
     }
   };
 
@@ -58,16 +106,19 @@ function Origine({ onBackClick }) {
                     type="text"
                     className="response-input"
                     placeholder="Type your response..."
+                    value={location}
                     onChange={handleInputChange}
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter' && hasSearchText && onBackClick) {
-                        onBackClick();
+                      if (e.key === 'Enter' && hasSearchText && !isSubmitting) {
+                        handleProceedClick();
                       }
                     }}
                     autoFocus
                   />
                 )}
-                {showSearchBar && hasSearchText && (
+                {error && <span className="api-error-message">{error}</span>}
+                {isSubmitting && <span className="api-loading-message">Submitting...</span>}
+                {showSearchBar && hasSearchText && !isSubmitting && (
                   <button className="proceed-btn" onClick={handleProceedClick}>
                     <img src={Proceed} alt="Proceed" />
                   </button>
