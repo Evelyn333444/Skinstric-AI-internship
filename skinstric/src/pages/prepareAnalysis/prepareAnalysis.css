@@ -1,5 +1,5 @@
 .body-text {
-    width: 600;
+    font-weight: 10;
     font-style: SemiBold;
     font-size: 16px;
     line-height: 24px;
@@ -9,10 +9,8 @@
 }
 
 .body-context {
-    width: 227px;
-    height: 24px;
-    margin-top: 468px;
-    margin-left: 846px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,22 +25,22 @@
 }
 
 .prepare-square-1 {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border: 2px dashed #999;
     transform: rotate(40deg);
 }
 
 .prepare-square-2 {
-    width: 380px;
-    height: 380px;
+    width: 280px;
+    height: 280px;
     border: 2px dashed #bbb;
     transform: rotate(45deg);
 }
 
 .prepare-square-3 {
-    width: 360px;
-    height: 360px;
+    width: 260px;
+    height: 260px;
     border: 2px dashed #ddd;
     transform: rotate(50deg);
 }
