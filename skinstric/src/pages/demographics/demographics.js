@@ -46,18 +46,20 @@ function demographics( onResetClick, onBackClick, onConfirmClick ) {
         </div>
         </div>
         <div className="body-center">
-            <div className="demographics-buttons-left">
-                <button className="east-asian-button">RACE</button>
-                //Fix this so that the Type of race shows up above the RACE, but depends on what name the API had for that//
-                //Might have to create a small component for it
-            </div>
-            <div className="age-button-left">
-                <button className="age-button">AGE</button>
-                //Again, fix this when you add in the API
-            </div>
-            <div className="gender-button-left">
-                <button className="gender-button">SEX</button>
-                //Again, fix this when you add in the API
+            <div className="sidebar-buttons">
+                <div className="demographics-buttons-left">
+                    <button className="race">RACE</button>
+                        //Fix this so that the Type of race shows up above the RACE, but depends on what name the API had for that//
+                        //Might have to create a small component for it
+                </div>
+                <div className="age-button-left">
+                    <button className="age-button">AGE</button>
+                        //Again, fix this when you add in the API
+                </div>
+                <div className="gender-button-left">
+                    <button className="gender-button">SEX</button>
+                        //Again, fix this when you add in the API
+                </div>
             </div>
             <div className="results-box">
                 <span className="type-race">Type of Race</span>
