@@ -36,7 +36,7 @@ function App() {
         <Origine
           onBackClick={() => setPage('intro')}
           onProceedSuccess={(trimmedlocation) => {
-            setUserLocation(location);
+            setUserLocation(trimmedlocation);
             setPage('gallery');
           }}
         />

@@ -5,6 +5,7 @@ import Proceed from 'assets/proceed.svg'
 import { SKINSTRIC_USER_NAME_KEY, SKINSTRIC_USER_LOCATION_KEY } from '../introduction/introduce'
 
 const PHASE_ONE_API = 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne';
+export const SKINSTRIC_USER_LOCATION_KEY = 'skinstricPhaseOneLocation';
 
 function Origine({ onBackClick, onProceedSuccess }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
