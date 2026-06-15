@@ -35,7 +35,7 @@ function Gallery({ onBackClick }) {
               <div className="gallery-romb1">
                 <div className="gallery-romb2">
                   <div className="gallery-romb3">
-                    <div className="gallery-image-wrapper">
+                    <div className="gallery-image-wrapper-scan">
                        <button className="scan-the-face" onClick={handleScanTheFace}>
                          <img src={ScanFace} alt="Scan Face" className="gallery-image" />
                        </button>
@@ -48,7 +48,7 @@ function Gallery({ onBackClick }) {
               <div className="gallery-romb1">
                 <div className="gallery-romb2">
                   <div className="gallery-romb3">
-                    <div className="gallery-image-wrapper">
+                    <div className="gallery-image-wrapper-gallery">
                       <img src={AccessGallery} alt="Access Gallery" className="gallery-image" />
                     </div>
                   </div>
