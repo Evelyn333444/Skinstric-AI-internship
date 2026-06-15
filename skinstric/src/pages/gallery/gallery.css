@@ -97,9 +97,12 @@
 }
 
 
-.scanFace {
-    width: 520px;
-    height: 482px;
+.scan-the-face,
+.select-Photo-Gallery {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
 }
 
 .accessGallery {

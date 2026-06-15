@@ -1,14 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 import './gallery.css'
 import BackButton from 'assets/backbutton.svg'
 import ScanFace from 'assets/scanFace.svg'
 import AccessGallery from 'assets/accessGallery.svg'
-import SelectPhoto from '../../components/selectPhoto/selectPhoto'
 
-function Gallery({ onBackClick }) {
-  const navigate = useNavigate();
-
+function Gallery({ onBackClick, onSelectPhotoClick, onScanFaceClick }) {
   const handleBackClick = () => {
     if (onBackClick) {
       onBackClick();
@@ -16,11 +12,15 @@ function Gallery({ onBackClick }) {
   };
 
   const handleScanTheFace = () => {
-    navigate('/scanFace');
+    if (onScanFaceClick) {
+      onScanFaceClick();
+    }
   };
 
   const handleSelectPhotoGallery = () => {
-    navigate('/selectPhoto')
+    if (onSelectPhotoClick) {
+      onSelectPhotoClick();
+    }
   };
 
   return (

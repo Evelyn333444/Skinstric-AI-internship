@@ -6,6 +6,7 @@ import Origine from './pages/origine/origine';
 import Gallery from './pages/gallery/gallery';
 import AIAnalysis from './pages/aiAnalysis/aiAnalysis';
 import Demographics from './pages/demographics/demographics';
+import SelectPhoto from './components/selectPhoto/selectPhoto';
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
@@ -41,7 +42,15 @@ function App() {
           }}
         />
       )}
-      {page === 'gallery' && <Gallery onBackClick={() => setPage('origine')} />}
+      {page === 'gallery' && (
+        <Gallery
+          onBackClick={() => setPage('origine')}
+          onSelectPhotoClick={() => setPage('selectPhoto')}
+        />
+      )}
+      {page === 'selectPhoto' && (
+        <SelectPhoto onBackClick={() => setPage('gallery')} />
+      )}
       {page === 'aiAnalysis' && (
         <AIAnalysis
           onBackClick={() => setPage('gallery')}

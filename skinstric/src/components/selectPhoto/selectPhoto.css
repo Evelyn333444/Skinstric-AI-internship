@@ -1,26 +1,124 @@
-.picker-container {
+.select-photo-page {
+  height: 100vh;
+  position: relative;
+  background: #fff;
+}
+
+.header-left-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-title {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header-intro {
+  color: grey;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.body-left-intro {
+  width: 100%;
+  height: 50%;
+}
+
+.intro-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #1A1B1C;
+}
+
+.select-photo-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  min-height: 50vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.select-photo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.select-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 320px;
+  border: 2px dashed #d7d9dc;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.select-photo-placeholder-text {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #666;
+  text-align: center;
   padding: 20px;
 }
 
-.select-btn {
-  background-color: #007aff; /* Standard macOS/iOS blue */
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.select-photo-preview {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border: 1px solid #e3e5e7;
 }
 
-.select-btn:hover {
-  background-color: #005ecb;
+.select-photo-btn {
+  border: 1px solid #1A1B1C;
+  background: #fff;
+  color: #1A1B1C;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.select-photo-btn:hover {
+  background: #1A1B1C;
+  color: #fff;
+}
+
+.select-photo-filename {
+  font-size: 12px;
+  color: #666;
+  word-break: break-all;
+  text-align: center;
 }
 
 .hidden-input {
   display: none;
+}
+
+.back-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  gap: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
