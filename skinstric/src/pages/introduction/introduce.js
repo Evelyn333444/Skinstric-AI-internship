@@ -27,6 +27,8 @@ function Introduce({ onBackClick, onSearchSubmit }) {
     }
   };
 
+  
+
   const handleProceedClick = async () => {
     const trimmedName = name.trim();
     if (!trimmedName) {
