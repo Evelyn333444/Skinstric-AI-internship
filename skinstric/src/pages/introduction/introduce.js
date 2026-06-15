@@ -4,6 +4,7 @@ import BackButton from 'assets/backbutton.svg'
 import Proceed from 'assets/proceed.svg'
 
 export const SKINSTRIC_USER_NAME_KEY = 'skinstricPhaseOneName';
+export const SKINSTRIC_USER_LOCATION_KEY = 'skinstricPhaseOneLocation';
 
 function Introduce({ onBackClick, onSearchSubmit }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -65,7 +66,7 @@ function Introduce({ onBackClick, onSearchSubmit }) {
         <button className="intro-type-btn" onClick={handleTypeClick}>
           CLICK TO TYPE
         </button>
-        <span className="rombus-text">Introduce Yourself</span>
+        <span className="rombus-text">Introduce Yourself (state your name)</span>
       </>
     ) : (
       <input

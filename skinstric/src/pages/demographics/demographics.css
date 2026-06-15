@@ -54,6 +54,23 @@
     text-transform: uppercase;
 }
 
+.body-left-user-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.body-left-user-name,
+.body-left-user-location {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #1A1B1C;
+}
+
 .body-center {
     position: fixed;
     top: 50%;

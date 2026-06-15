@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import BackButton from 'assets/backbutton.svg'
 import './origine.css'
 import Proceed from 'assets/proceed.svg'
-import { SKINSTRIC_USER_NAME_KEY } from '../introduction/introduce'
+import { SKINSTRIC_USER_NAME_KEY, SKINSTRIC_USER_LOCATION_KEY } from '../introduction/introduce'
 
 const PHASE_ONE_API = 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne';
 
@@ -60,8 +60,10 @@ function Origine({ onBackClick, onProceedSuccess }) {
         return;
       }
 
+      sessionStorage.setItem(SKINSTRIC_USER_LOCATION_KEY, trimmedLocation);
+
       if (onProceedSuccess) {
-        onProceedSuccess();
+        onProceedSuccess(trimmedLocation);
       }
     } catch {
       setError('Network error. Please try again.');
@@ -99,7 +101,7 @@ function Origine({ onBackClick, onProceedSuccess }) {
                   onMouseEnter={() => setHoverRombText(true)}
                   onMouseLeave={() => setHoverRombText(false)}
                 >
-                  Where Are You From?
+                  Where Are You From? (country and/or state)
                 </span>
                 {showSearchBar && (
                   <input
