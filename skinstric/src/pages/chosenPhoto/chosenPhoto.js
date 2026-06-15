@@ -1,46 +1,34 @@
-import React, { useState } from 'react';
-import './PhotoUpload.css'; // We'll create this file next
+import React from 'react';
+import BackButton from 'assets/backbutton.svg';
+import './chosenPhoto.css';
 
-export default function PhotoUpload() {
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      // Create a local preview URL for the image
-      const previewUrl = URL.createObjectURL(file);
-      setSelectedImage(previewUrl);
+function ChosenPhoto({ selectedPhoto, onBackClick }) {
+  const handleBackClick = () => {
+    if (onBackClick) {
+      onBackClick();
     }
   };
 
-   return (
-    <div className="upload-container">
-      <div className="upload-box">
-        {selectedImage ? (
-          <div className="image-preview-container">
-            <img src={selectedImage} alt="User Selected" className="image-preview" />
-            <button className="change-btn" onClick={() => document.getElementById('fileInput').click()}>
-              Choose Different Photo
-            </button>
-          </div>
-        ) : (
-          <div className="empty-state">
-            <p>No photo selected</p>
-            <button className="upload-btn" onClick={() => document.getElementById('fileInput').click()}>
-              Select from Computer
-            </button>
-          </div>
-        )}
-
-        {/* Hidden File Input */}
-        <input
-          id="fileInput"
-          type="file"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={handleImageChange}
+  return (
+    <div className="chosen-photo-page">
+      {selectedPhoto ? (
+        <img
+          src={selectedPhoto}
+          alt="User selected"
+          className="chosen-photo-image"
         />
-      </div>
+      ) : (
+        <div className="chosen-photo-empty">
+          <p>No photo selected</p>
+        </div>
+      )}
+      <footer className="chosen-photo-footer">
+        <button type="button" className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="Back" />
+        </button>
+      </footer>
     </div>
   );
 }
+
+export default ChosenPhoto;

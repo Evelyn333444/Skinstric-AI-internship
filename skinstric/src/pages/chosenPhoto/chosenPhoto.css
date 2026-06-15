@@ -1,64 +1,48 @@
-.upload-container {
+.chosen-photo-page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.chosen-photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.chosen-photo-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.chosen-photo-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.chosen-photo-footer .back-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f3f4f6;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-}
-
-.upload-box {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 500px;
   width: 100%;
-}
-
-.image-preview-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.image-preview {
-  width: 100%;
-  max-height: 400px;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-}
-
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 0;
-  color: #6b7280;
-}
-
-.upload-btn, .change-btn {
-  background-color: #3b82f6;
-  color: white;
-  padding: 10px 20px;
+  padding: 16px;
   border: none;
-  border-radius: 6px;
-  font-weight: 600;
+  background: transparent;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.upload-btn:hover, .change-btn:hover {
-  background-color: #2563eb;
-}
-
-.change-btn {
-  background-color: #6b7280;
-}
-
-.change-btn:hover {
-  background-color: #4b5563;
 }

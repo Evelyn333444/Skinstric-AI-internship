@@ -7,6 +7,7 @@ import Gallery from './pages/gallery/gallery';
 import AIAnalysis from './pages/aiAnalysis/aiAnalysis';
 import Demographics from './pages/demographics/demographics';
 import SelectPhoto from './components/selectPhoto/selectPhoto';
+import ChosenPhoto from './pages/chosenPhoto/chosenPhoto';
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
@@ -20,6 +21,7 @@ function App() {
   const [userLocation, setUserLocation] = useState(
     () => sessionStorage.getItem(SKINSTRIC_USER_LOCATION_KEY) || ''
   );
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
     <div className="App">
@@ -49,7 +51,19 @@ function App() {
         />
       )}
       {page === 'selectPhoto' && (
-        <SelectPhoto onBackClick={() => setPage('gallery')} />
+        <SelectPhoto
+          onBackClick={() => setPage('gallery')}
+          onPhotoSelected={(photo) => {
+            setSelectedPhoto(photo);
+            setPage('chosenPhoto');
+          }}
+        />
+      )}
+      {page === 'chosenPhoto' && (
+        <ChosenPhoto
+          selectedPhoto={selectedPhoto}
+          onBackClick={() => setPage('selectPhoto')}
+        />
       )}
       {page === 'aiAnalysis' && (
         <AIAnalysis
