@@ -66,7 +66,30 @@ function demographics( onResetClick, onBackClick, onConfirmClick ) {
             </div>
             <PercentCircle />
             <div className="ai-confidence-percent-box">
-                <div className=""></div>
+                <div className="ai-confidence">
+                    <span className="title-row-text">A.I. CONFIDENCE</span>
+                </div>
+                <div className="type-1">
+                    <span className="type-1-classification">RACE #1</span>
+                </div>
+                <div className="type-2">
+                    <span className="type-2-classification">RACE #2</span>
+                </div>
+                <div className="type-3">
+                    <span className="type-3-classification">RACE #3</span>
+                </div>
+                <div className="type-4">
+                    <span className="type-4-classification">RACE #4</span>
+                </div>
+                <div className="type-5">
+                    <span className="type-5-classification">RACE #5</span>
+                </div>
+                <div className="type-6">
+                    <span className="type-6-classification">RACE #6</span>
+                </div>
+                <div className="type-7">
+                    <span className="type-7-classification">RACE #7</span>
+                </div>
             </div>
         </div>
         </main>
