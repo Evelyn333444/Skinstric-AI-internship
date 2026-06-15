@@ -94,6 +94,98 @@
     color: black;
 }
 
+.type-race-value {
+    display: block;
+    margin-top: 8px;
+    margin-left: 260px;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.demographics-status {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.demographics-status-error {
+    color: #c0392b;
+}
+
+.sidebar-prediction {
+    display: block;
+    font-size: 10px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #1A1B1C;
+    margin-bottom: 6px;
+}
+
+.race,
+.race-button,
+.age-button,
+.gender-button {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 1px solid #1A1B1C;
+    cursor: pointer;
+}
+
+.race,
+.race-button {
+    height: 20px;
+}
+
+.age-button {
+    height: 40px;
+}
+
+.gender-button {
+    height: 60px;
+}
+
+.race.is-active,
+.race-button.is-active,
+.age-button.is-active,
+.gender-button.is-active {
+    background-color: black;
+    color: white;
+}
+
+.demographics-type-row {
+    border: none;
+    background: inherit;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.demographics-type-row.is-selected {
+    background-color: black;
+    color: white;
+}
+
+.demographics-type-row.is-selected .type-1-classification,
+.demographics-type-row.is-selected .type-2-classification,
+.demographics-type-row.is-selected .type-3-classification,
+.demographics-type-row.is-selected .type-4-classification,
+.demographics-type-row.is-selected .type-5-classification,
+.demographics-type-row.is-selected .type-6-classification,
+.demographics-type-row.is-selected .type-7-classification,
+.demographics-type-row.is-selected .type-1-percentage,
+.demographics-type-row.is-selected .type-2-percentage,
+.demographics-type-row.is-selected .type-3-percentage,
+.demographics-type-row.is-selected .type-4-percentage,
+.demographics-type-row.is-selected .type-5-percentage,
+.demographics-type-row.is-selected .type-6-percentage,
+.demographics-type-row.is-selected .type-7-percentage {
+    color: white;
+}
+
 /* AI Confidence box */
 
 .ai-confidence-percent-box {

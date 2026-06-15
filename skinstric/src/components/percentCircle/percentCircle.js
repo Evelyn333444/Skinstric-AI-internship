@@ -1,7 +1,7 @@
 import React from "react";
 import "./percentCircle.css";
 
-const percentCircle = ({ percentage }) => {
+const percentCircle = ({ percentage = 0 }) => {
   const radius = 60; // Circle radius
   const strokeWidth = 10; // Border thickness
   const circumference = 2 * Math.PI * radius;

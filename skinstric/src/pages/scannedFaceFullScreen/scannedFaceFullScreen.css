@@ -34,15 +34,42 @@
   left: 0;
   right: 0;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 16px;
+  box-sizing: border-box;
 }
 
 .scanned-face-footer .back-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: auto;
   padding: 16px;
   border: none;
   background: transparent;
   cursor: pointer;
+}
+
+.proceed-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  width: 97px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proceed-btn:hover img {
+  opacity: 0.85;
+}
+
+.proceed-btn img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }

@@ -25,7 +25,13 @@ function App() {
   );
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [scannedPhoto, setScannedPhoto] = useState(null);
+  const [confirmedPhoto, setConfirmedPhoto] = useState(null);
   const [photoBackPage, setPhotoBackPage] = useState('selectPhoto');
+
+  const handlePhotoConfirm = (photo) => {
+    setConfirmedPhoto(photo);
+    setPage('demographics');
+  };
 
   return (
     <div className="App">
@@ -68,6 +74,7 @@ function App() {
         <ScannedFaceFullScreen
           scannedPhoto={scannedPhoto}
           onBackClick={() => setPage('scanFace')}
+          onProceedClick={handlePhotoConfirm}
         />
       )}
       {page === 'selectPhoto' && (
@@ -84,6 +91,7 @@ function App() {
         <ChosenPhoto
           selectedPhoto={selectedPhoto}
           onBackClick={() => setPage(photoBackPage)}
+          onProceedClick={handlePhotoConfirm}
         />
       )}
       {page === 'aiAnalysis' && (
@@ -96,7 +104,8 @@ function App() {
         <Demographics
           userName={userName}
           userLocation={userLocation}
-          onBackClick={() => setPage('aiAnalysis')}
+          confirmedPhoto={confirmedPhoto}
+          onBackClick={() => setPage('gallery')}
         />
       )}
     </div>

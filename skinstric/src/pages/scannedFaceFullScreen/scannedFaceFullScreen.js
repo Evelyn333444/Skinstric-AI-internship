@@ -1,11 +1,18 @@
 import React from 'react';
 import BackButton from 'assets/backbutton.svg';
+import Proceed from 'assets/proceed.svg';
 import './scannedFaceFullScreen.css';
 
-function ScannedFaceFullScreen({ scannedPhoto, onBackClick }) {
+function ScannedFaceFullScreen({ scannedPhoto, onBackClick, onProceedClick }) {
   const handleBackClick = () => {
     if (onBackClick) {
       onBackClick();
+    }
+  };
+
+  const handleProceedClick = () => {
+    if (scannedPhoto && onProceedClick) {
+      onProceedClick(scannedPhoto);
     }
   };
 
@@ -26,6 +33,11 @@ function ScannedFaceFullScreen({ scannedPhoto, onBackClick }) {
         <button type="button" className="back-button" onClick={handleBackClick}>
           <img src={BackButton} alt="Back" />
         </button>
+        {scannedPhoto && (
+          <button type="button" className="proceed-btn" onClick={handleProceedClick}>
+            <img src={Proceed} alt="Proceed" />
+          </button>
+        )}
       </footer>
     </div>
   );
