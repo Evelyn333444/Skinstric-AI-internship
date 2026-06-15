@@ -8,6 +8,7 @@ import AIAnalysis from './pages/aiAnalysis/aiAnalysis';
 import Demographics from './pages/demographics/demographics';
 import SelectPhoto from './components/selectPhoto/selectPhoto';
 import ChosenPhoto from './pages/chosenPhoto/chosenPhoto';
+import ScanFace from './components/scanFace/scanFace';
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
@@ -22,6 +23,7 @@ function App() {
     () => sessionStorage.getItem(SKINSTRIC_USER_LOCATION_KEY) || ''
   );
   const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [photoBackPage, setPhotoBackPage] = useState('selectPhoto');
 
   return (
     <div className="App">
@@ -48,6 +50,17 @@ function App() {
         <Gallery
           onBackClick={() => setPage('origine')}
           onSelectPhotoClick={() => setPage('selectPhoto')}
+          onScanFaceClick={() => setPage('scanFace')}
+        />
+      )}
+      {page === 'scanFace' && (
+        <ScanFace
+          onBackClick={() => setPage('gallery')}
+          onPhotoCaptured={(photo) => {
+            setSelectedPhoto(photo);
+            setPhotoBackPage('scanFace');
+            setPage('chosenPhoto');
+          }}
         />
       )}
       {page === 'selectPhoto' && (
@@ -55,6 +68,7 @@ function App() {
           onBackClick={() => setPage('gallery')}
           onPhotoSelected={(photo) => {
             setSelectedPhoto(photo);
+            setPhotoBackPage('selectPhoto');
             setPage('chosenPhoto');
           }}
         />
@@ -62,7 +76,7 @@ function App() {
       {page === 'chosenPhoto' && (
         <ChosenPhoto
           selectedPhoto={selectedPhoto}
-          onBackClick={() => setPage('selectPhoto')}
+          onBackClick={() => setPage(photoBackPage)}
         />
       )}
       {page === 'aiAnalysis' && (
