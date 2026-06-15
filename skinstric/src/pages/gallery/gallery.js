@@ -4,6 +4,7 @@ import './gallery.css'
 import BackButton from 'assets/backbutton.svg'
 import ScanFace from 'assets/scanFace.svg'
 import AccessGallery from 'assets/accessGallery.svg'
+import SelectPhoto from '../../components/selectPhoto/selectPhoto'
 
 function Gallery({ onBackClick }) {
   const navigate = useNavigate();
@@ -16,6 +17,10 @@ function Gallery({ onBackClick }) {
 
   const handleScanTheFace = () => {
     navigate('/scanFace');
+  };
+
+  const handleSelectPhotoGallery = () => {
+    navigate('/selectPhoto')
   };
 
   return (
@@ -49,7 +54,9 @@ function Gallery({ onBackClick }) {
                 <div className="gallery-romb2">
                   <div className="gallery-romb3">
                     <div className="gallery-image-wrapper-gallery">
+                      <button className="select-Photo-Gallery" onClick={handleSelectPhotoGallery}>
                       <img src={AccessGallery} alt="Access Gallery" className="gallery-image" />
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,26 @@
+.picker-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.select-btn {
+  background-color: #007aff; /* Standard macOS/iOS blue */
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-btn:hover {
+  background-color: #005ecb;
+}
+
+.hidden-input {
+  display: none;
+}
