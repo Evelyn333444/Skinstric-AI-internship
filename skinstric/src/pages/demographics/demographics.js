@@ -83,7 +83,7 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
         const response = await fetch(PHASE_TWO_API, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: confirmedPhoto }),
+          body: JSON.stringify({ Image: confirmedPhoto }),
         });
 
         const data = await response.json();
@@ -92,7 +92,7 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
           return;
         }
 
-        if (!response.ok || !data.success || !data.data) {
+        if (!response.ok || !data.data) {
           setError(data.message || 'Unable to analyze photo.');
           setAnalysis(null);
           return;
