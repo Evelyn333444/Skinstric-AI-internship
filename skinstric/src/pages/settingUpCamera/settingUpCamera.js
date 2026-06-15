@@ -9,6 +9,7 @@ function settingUpCamera() {
   return (
     <div>
       <main>
+        <div className="body-content">
         <div className="rombuses">
         {hoverRombText ? (
         <div className="romb1">
@@ -26,6 +27,7 @@ function settingUpCamera() {
         </div>
         <div className="text">
             <img src={SetUpCameraBetterResults} alt=""></img>
+        </div>
         </div>
       </main>
     </div>
