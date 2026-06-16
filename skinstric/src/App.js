@@ -73,8 +73,11 @@ function App() {
       {page === 'scannedFaceFullScreen' && (
         <ScannedFaceFullScreen
           scannedPhoto={scannedPhoto}
-          onBackClick={() => setPage('scanFace')}
-          onProceedClick={handlePhotoConfirm}
+          onKeepPhotoClick={handlePhotoConfirm}
+          onTryAgainClick={() => {
+            setScannedPhoto(null);
+            setPage('scanFace');
+          }}
         />
       )}
       {page === 'selectPhoto' && (

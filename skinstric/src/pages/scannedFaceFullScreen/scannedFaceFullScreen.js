@@ -1,18 +1,16 @@
 import React from 'react';
-import BackButton from 'assets/backbutton.svg';
-import Proceed from 'assets/proceed.svg';
 import './scannedFaceFullScreen.css';
 
-function ScannedFaceFullScreen({ scannedPhoto, onBackClick, onProceedClick }) {
-  const handleBackClick = () => {
-    if (onBackClick) {
-      onBackClick();
+function ScannedFaceFullScreen({ scannedPhoto, onKeepPhotoClick, onTryAgainClick }) {
+  const handleKeepPhoto = () => {
+    if (scannedPhoto && onKeepPhotoClick) {
+      onKeepPhotoClick(scannedPhoto);
     }
   };
 
-  const handleProceedClick = () => {
-    if (scannedPhoto && onProceedClick) {
-      onProceedClick(scannedPhoto);
+  const handleTryAgain = () => {
+    if (onTryAgainClick) {
+      onTryAgainClick();
     }
   };
 
@@ -29,16 +27,17 @@ function ScannedFaceFullScreen({ scannedPhoto, onBackClick, onProceedClick }) {
           <p>No scanned photo</p>
         </div>
       )}
-      <footer className="scanned-face-footer">
-        <button type="button" className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="Back" />
-        </button>
-        {scannedPhoto && (
-          <button type="button" className="proceed-btn" onClick={handleProceedClick}>
-            <img src={Proceed} alt="Proceed" />
+      <div className="scanned-face-prompt">
+        <p className="scanned-face-question">Keep this photo?</p>
+        <div className="scanned-face-actions">
+          <button type="button" className="scanned-face-btn keep-photo-btn" onClick={handleKeepPhoto}>
+            Keep Photo
           </button>
-        )}
-      </footer>
+          <button type="button" className="scanned-face-btn try-again-btn" onClick={handleTryAgain}>
+            Try Again
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

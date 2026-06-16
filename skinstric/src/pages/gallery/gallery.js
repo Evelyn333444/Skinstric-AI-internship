@@ -24,7 +24,7 @@ function Gallery({ onBackClick, onSelectPhotoClick, onScanFaceClick }) {
   };
 
   return (
-    <div>
+    <div className="gallery-page">
       <header>
         <div className="header-left-intro">
           <span className="header-title">SKINSTRIC</span>
@@ -37,38 +37,36 @@ function Gallery({ onBackClick, onSelectPhotoClick, onScanFaceClick }) {
         </div>
         <div className="body-center">
             <div className="gallery-card">
-              <div className="gallery-romb1">
-                <div className="gallery-romb2">
-                  <div className="gallery-romb3">
-                    <div className="gallery-image-wrapper-scan">
-                       <button className="scan-the-face" onClick={handleScanTheFace}>
-                         <img src={ScanFace} alt="Scan Face" className="gallery-image" />
-                       </button>
-                    </div>
+              <div className="gallery-rombuses" aria-hidden="true">
+                <div className="gallery-romb1">
+                  <div className="gallery-romb2">
+                    <div className="gallery-romb3" />
                   </div>
                 </div>
               </div>
+              <button type="button" className="scan-the-face" onClick={handleScanTheFace}>
+                <img src={ScanFace} alt="Scan Face" className="gallery-image" />
+              </button>
             </div>
             <div className="gallery-card">
-              <div className="gallery-romb1">
-                <div className="gallery-romb2">
-                  <div className="gallery-romb3">
-                    <div className="gallery-image-wrapper-gallery">
-                      <button className="select-Photo-Gallery" onClick={handleSelectPhotoGallery}>
-                      <img src={AccessGallery} alt="Access Gallery" className="gallery-image" />
-                      </button>
-                    </div>
+              <div className="gallery-rombuses" aria-hidden="true">
+                <div className="gallery-romb1">
+                  <div className="gallery-romb2">
+                    <div className="gallery-romb3" />
                   </div>
                 </div>
               </div>
+              <button type="button" className="select-Photo-Gallery" onClick={handleSelectPhotoGallery}>
+                <img src={AccessGallery} alt="Access Gallery" className="gallery-image" />
+              </button>
             </div>
         </div>
       </main>
-      <footer>
-              <button className="back-button" onClick={handleBackClick}>
-                <img src={BackButton} alt="Back" />
-              </button>
-            </footer>
+      <footer className="gallery-footer">
+        <button type="button" className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="Back" />
+        </button>
+      </footer>
     </div>
   )
 }
