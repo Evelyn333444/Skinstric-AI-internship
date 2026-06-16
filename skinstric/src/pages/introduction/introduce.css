@@ -34,16 +34,29 @@
 }
 
 .intro-page {
-  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   position: relative;
 }
 
 .intro-content {
   position: relative;
-  height: calc(100vh - 160px);
+  height: calc(100dvh - 160px);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.intro-page + footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.intro-page + footer .back-button {
+  width: auto;
+  height: auto;
 }
 
 .intro-form {
