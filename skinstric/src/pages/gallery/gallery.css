@@ -37,10 +37,8 @@
 }
 
 .body-left-intro {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  z-index: 1;
+  width: 100%;
+  height: auto;
 }
 
 .intro-text {
@@ -50,6 +48,10 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #1A1B1C;
+}
+
+.gallery-page main {
+  border: 2px solid blue;
 }
 
 .body-center {
