@@ -7,25 +7,33 @@
   overflow: hidden;
 }
 
-.body-text {
-    font-weight: 10;
-    font-style: SemiBold;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    text-transform: uppercase;
-    color: #1A1B1C;
-}
-
 .body-context {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Spinning effect */
+.prepare-squares {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.body-text {
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #1A1B1C;
+  text-align: center;
+  padding: 0 16px;
+}
 
 @keyframes spin {
   from {
@@ -37,37 +45,32 @@
   }
 }
 
-.prepare-square-1 {
-  animation: spin 20s linear infinite;
-}
-
-.prepare-square-2 {
-  animation: spin 24s linear infinite;
-}
-
-.prepare-square-3 {
-  animation: spin 28s linear infinite;
-}
-
 .prepare-square-1,
 .prepare-square-2,
 .prepare-square-3 {
-    position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;
-  height: 320px;
   border: 2px dashed #dadcdf;
 }
 
 .prepare-square-1 {
-   transform: translate(-50%, -50%) rotate(15deg);
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(40deg);
+  animation: spin 20s linear infinite;
 }
 
 .prepare-square-2 {
-    transform: translate(-50%, -50%) rotate(35deg);
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: spin 24s linear infinite;
 }
 
 .prepare-square-3 {
-    transform: translate(-50%, -50%) rotate(55deg);
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%) rotate(50deg);
+  animation: spin 28s linear infinite;
 }

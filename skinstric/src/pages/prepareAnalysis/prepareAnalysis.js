@@ -15,13 +15,12 @@ function PrepareAnalysis({ onComplete }) {
   return (
     <div className="prepare-analysis-page">
       <div className="body-context">
-        <div className="prepare-square-1">
-          <div className="prepare-square-2">
-            <div className="prepare-square-3">
-              <span className="body-text">PREPARING YOUR ANALYSIS...</span>
-            </div>
-          </div>
+        <div className="prepare-squares" aria-hidden="true">
+          <div className="prepare-square-1" />
+          <div className="prepare-square-2" />
+          <div className="prepare-square-3" />
         </div>
+        <span className="body-text">PREPARING YOUR ANALYSIS...</span>
       </div>
     </div>
   );

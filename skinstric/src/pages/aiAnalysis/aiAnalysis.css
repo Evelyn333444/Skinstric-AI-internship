@@ -15,15 +15,28 @@
 
 /* Body */
 
-.body-left {
+.ai-analysis-page main {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-analysis-page .body-left {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
   padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.body-left-bold {
-  width: 100%;
+.ai-analysis-page .body-left-bold {
+  width: auto;
+  height: auto;
 }
 
-.body-left-bold-text {
+.ai-analysis-page .body-left-bold-text {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -31,26 +44,32 @@
   text-transform: uppercase;
 }
 
-.body-left-not-bold {
-  width: 100%;
+.ai-analysis-page .body-left-not-bold {
+  width: auto;
+  height: auto;
   margin-top: 8px;
+  max-width: 320px;
 }
 
-.body-left-not-bold-text {
+.ai-analysis-page .body-left-not-bold-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   text-transform: uppercase;
 }
 
-.body-center {
+.ai-analysis-page .body-center {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
-.summary-diagram-container {
+.ai-analysis-page .summary-diagram-container {
   display: flex;
   justify-content: center;
   align-items: center;
