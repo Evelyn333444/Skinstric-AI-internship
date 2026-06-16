@@ -52,33 +52,29 @@
   color: #1A1B1C;
 }
 
-.gallery-page main {
-  border: 2px solid blue;
-}
-
-.body-center {
+.gallery-page .body-center {
   --card-size: min(
     300px,
-    calc((100vw - 30px - 64px) / 2),
+    calc((100vw - 140px - 64px) / 2),
     calc(100dvh - 180px)
   );
+  /* Extra room so spinning dashed borders don't overlap between cards */
+  --card-gap: calc(var(--card-size) * 0.45);
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: var(--card-gap);
   max-width: 100%;
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid red;
 }
 
 /* Animations */
 
-@keyframes spin {
+@keyframes gallery-spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
@@ -86,18 +82,6 @@
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
-}
-
- .gallery-romb1 .gallery-rombuses {
-  animation: spin 20s linear infinite;
-}
-
-.gallery-romb2 .gallery-rombuses  {
-  animation: spin 24s linear infinite;
-}
-
- .gallery-romb3 .gallery-rombuses {
-  animation: spin 28s linear infinite;
 }
 
 .gallery-card {
@@ -110,37 +94,37 @@
 .gallery-rombuses {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   pointer-events: none;
 }
 
 .gallery-romb1,
 .gallery-romb2,
 .gallery-romb3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px dashed #dadcdf;
 }
 
 .gallery-romb1 {
-  width: calc(var(--card-size) * 0.707);
-  height: calc(var(--card-size) * 0.707);
-  border: 2px dashed #e3e5e7;
-  transform: rotate(45deg);
+  width: calc(var(--card-size) * 0.933);
+  height: calc(var(--card-size) * 0.933);
+  transform: translate(-50%, -50%) rotate(40deg);
+  animation: gallery-spin 20s linear infinite;
 }
 
 .gallery-romb2 {
-  width: 93.33%;
-  height: 93.33%;
-  border: 2px dashed #d7d9dc;
+  width: calc(var(--card-size) * 0.867);
+  height: calc(var(--card-size) * 0.867);
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: gallery-spin 24s linear infinite;
 }
 
 .gallery-romb3 {
-  width: 86.67%;
-  height: 86.67%;
-  border: 2px dashed #dadcdf;
+  width: calc(var(--card-size) * 0.8);
+  height: calc(var(--card-size) * 0.8);
+  transform: translate(-50%, -50%) rotate(50deg);
+  animation: gallery-spin 28s linear infinite;
 }
 
 .scan-the-face,
@@ -177,15 +161,15 @@
 }
 
 .back-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 16px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
 }
 
 .back-button-text {
