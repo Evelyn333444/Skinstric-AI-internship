@@ -109,10 +109,13 @@ function ScanFace({ onBackClick, onPhotoCaptured }) {
           )}
         </div>
       </main>
-      <footer>
-        <button type="button" className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="Back" />
+      <footer className="page-footer">
+        <div className="footer-left">
+         <button className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="" />
         </button>
+        <span className="back-button-text">Back</span>
+        </div>
       </footer>
     </div>
   );
