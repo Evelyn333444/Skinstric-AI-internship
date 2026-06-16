@@ -133,9 +133,11 @@ function Origine({ onBackClick, onProceedSuccess }) {
         </div>
       </main>
       <footer>
-        <button className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="Back" />
-        </button>
+        <div className="back-option">
+          <button className="back-button" onClick={handleBackClick}>
+            <img src={BackButton} alt="Back" />
+          </button>
+        </div>
       </footer>
     </div>
   )
