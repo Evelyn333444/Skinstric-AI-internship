@@ -351,34 +351,10 @@
 
 /* Footer */
 
-.demographics-footer {
-  justify-content: flex-start;
-  display: flex;
-  width: 100%;
-}
-
-.footer-text-layout {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 16px;
-}
-
-.footer-text {
-  font-weight: 400;
-  font-style: regular;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -2%;
-  color: #A0A4AB;
-  text-align: center;
-}
-
-.demographics-footer-actions {
+.footer-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
 }
 
 /* Buttons */
@@ -388,9 +364,11 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    height: 50%;
     gap: 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
 }
 
 .back-button-text {

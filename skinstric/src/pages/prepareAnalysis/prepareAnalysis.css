@@ -25,31 +25,49 @@
     justify-content: center;
 }
 
-.prepare-square-1,
-.prepare-square-2,
-.prepare-square-3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Spinning effect */
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .prepare-square-1 {
-    width: 300px;
-    height: 300px;
-    border: 2px dashed #999;
-    transform: rotate(40deg);
+  animation: spin 20s linear infinite;
 }
 
 .prepare-square-2 {
-    width: 280px;
-    height: 280px;
-    border: 2px dashed #bbb;
-    transform: rotate(45deg);
+  animation: spin 24s linear infinite;
 }
 
 .prepare-square-3 {
-    width: 260px;
-    height: 260px;
-    border: 2px dashed #ddd;
-    transform: rotate(50deg);
+  animation: spin 28s linear infinite;
+}
+
+.prepare-square-1,
+.prepare-square-2,
+.prepare-square-3 {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  border: 2px dashed #dadcdf;
+}
+
+.prepare-square-1 {
+   transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.prepare-square-2 {
+    transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.prepare-square-3 {
+    transform: translate(-50%, -50%) rotate(55deg);
 }
