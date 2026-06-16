@@ -29,11 +29,12 @@ function AiAnalysis({ onBackClick, onDemographicsClick }) {
             </span>
           </div>
         </div>
+        
         <div className="body-center">
           <div className="summary-diagram-container">
             <SummaryDiagramInteractive onDemographicsClick={onDemographicsClick} />
           </div>
-        </div>
+          </div>
       </main>
       <footer className="page-footer">
         <div className="footer-left">

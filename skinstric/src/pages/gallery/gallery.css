@@ -37,8 +37,10 @@
 }
 
 .body-left-intro {
-  width: 100%;
-  height: auto;
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  z-index: 2;
 }
 
 .intro-text {
@@ -66,7 +68,12 @@
   justify-content: center;
   gap: 30px;
   max-width: 100%;
-   border: 2px solid red;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid red;
 }
 
 /* Animations */
@@ -81,15 +88,15 @@
   }
 }
 
-.gallery-romb1 .gallery-rombuses {
+ .gallery-romb1 .gallery-rombuses {
   animation: spin 20s linear infinite;
 }
 
-.gallery-romb2 .gallery-rombuses {
+.gallery-romb2 .gallery-rombuses  {
   animation: spin 24s linear infinite;
 }
 
-.gallery-romb3 .gallery-rombuses {
+ .gallery-romb3 .gallery-rombuses {
   animation: spin 28s linear infinite;
 }
 
