@@ -5,6 +5,7 @@ import Proceed from 'assets/proceed.svg'
 
 export const SKINSTRIC_USER_NAME_KEY = 'skinstricPhaseOneName';
 export const SKINSTRIC_USER_LOCATION_KEY = 'skinstricPhaseOneLocation';
+export const SKINSTRIC_CONFIRMED_PHOTO_KEY = 'skinstricConfirmedPhoto';
 
 function Introduce({ onBackClick, onSearchSubmit }) {
   const [showSearchBar, setShowSearchBar] = useState(false);

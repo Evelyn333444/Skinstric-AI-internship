@@ -14,6 +14,7 @@ import ScannedFaceFullScreen from './pages/scannedFaceFullScreen/scannedFaceFull
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
+  SKINSTRIC_CONFIRMED_PHOTO_KEY,
 } from './pages/introduction/introduce';
 
 function App() {
@@ -26,11 +27,14 @@ function App() {
   );
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [scannedPhoto, setScannedPhoto] = useState(null);
-  const [confirmedPhoto, setConfirmedPhoto] = useState(null);
+  const [confirmedPhoto, setConfirmedPhoto] = useState(
+    () => sessionStorage.getItem(SKINSTRIC_CONFIRMED_PHOTO_KEY) || null
+  );
   const [photoBackPage, setPhotoBackPage] = useState('selectPhoto');
 
   const handlePhotoConfirm = (photo) => {
     setConfirmedPhoto(photo);
+    sessionStorage.setItem(SKINSTRIC_CONFIRMED_PHOTO_KEY, photo);
     setPage('prepareAnalysis');
   };
 

@@ -8,6 +8,7 @@ import PercentCircle from '../../components/percentCircle/percentCircle'
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
+  SKINSTRIC_CONFIRMED_PHOTO_KEY,
 } from '../introduction/introduce'
 
 const PHASE_TWO_API = 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo';
@@ -31,6 +32,7 @@ const parsePredictions = (predictions) => {
 function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, userLocation, confirmedPhoto }) {
   const displayName = userName || sessionStorage.getItem(SKINSTRIC_USER_NAME_KEY) || '';
   const displayLocation = userLocation || sessionStorage.getItem(SKINSTRIC_USER_LOCATION_KEY) || '';
+  const photoForAnalysis = confirmedPhoto || sessionStorage.getItem(SKINSTRIC_CONFIRMED_PHOTO_KEY) || '';
 
   const [analysis, setAnalysis] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +70,7 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
     || { label: 'N/A', percentage: 0 };
 
   useEffect(() => {
-    if (!confirmedPhoto) {
+    if (!photoForAnalysis) {
       setError('No photo provided for analysis.');
       return;
     }
@@ -83,7 +85,7 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
         const response = await fetch(PHASE_TWO_API, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ Image: confirmedPhoto }),
+          body: JSON.stringify({ image: photoForAnalysis }),
         });
 
         const data = await response.json();
@@ -92,7 +94,7 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
           return;
         }
 
-        if (!response.ok || !data.data) {
+        if (!response.ok || !data.success || !data.data) {
           setError(data.message || 'Unable to analyze photo.');
           setAnalysis(null);
           return;
@@ -127,7 +129,7 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
     return () => {
       isMounted = false;
     };
-  }, [confirmedPhoto]);
+  }, [photoForAnalysis]);
 
   const handleBackClick = () => {
     if (onBackClick) {
