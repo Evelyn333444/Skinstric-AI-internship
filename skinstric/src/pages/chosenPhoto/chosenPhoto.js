@@ -29,7 +29,7 @@ function ChosenPhoto({ selectedPhoto, onBackClick, onProceedClick }) {
           <p>No photo selected</p>
         </div>
       )}
-      <footer className="chosen-photo-footer">
+      <footer className="chosen-photo-footer page-footer">
         <button type="button" className="back-button" onClick={handleBackClick}>
           <img src={BackButton} alt="Back" />
         </button>

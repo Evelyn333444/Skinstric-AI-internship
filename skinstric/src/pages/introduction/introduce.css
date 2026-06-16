@@ -48,15 +48,34 @@
   align-items: center;
 }
 
-.intro-page + footer {
+.intro-page + footer,
+.page-footer {
   position: fixed;
   left: 0;
+  right: 0;
   bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-.intro-page + footer .back-button {
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.intro-page + footer .back-button,
+.page-footer .back-button {
   width: auto;
   height: auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
 }
 
 .intro-form {
@@ -78,8 +97,11 @@
 
 .rombuses {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 500px;
   height: 500px;
+  transform: translate(-50%, -50%);
 }
 
 .rombus-text {
@@ -154,6 +176,12 @@
 
 /* Icons */
 
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .back-option {
   justify-content: flex-start;
   display: flex;
@@ -165,9 +193,11 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    height: 50%;
     gap: 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
 }
 
 .back-button-text {

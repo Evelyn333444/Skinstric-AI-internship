@@ -122,23 +122,25 @@ function Origine({ onBackClick, onProceedSuccess }) {
               )}
               {error && <span className="api-error-message">{error}</span>}
               {isSubmitting && <span className="api-loading-message">Submitting...</span>}
-              {showSearchBar && hasSearchText && !isSubmitting && (
-                <div className="proceed">
-                <button type="button" className="proceed-btn" onClick={handleProceedClick}>
-                  <img src={Proceed} alt="" />
-                </button>
-                <span className="proceed-text">Proceed</span>
-                </div>
-              )}
             </div>
           </div>
         </div>
       </div>
-      <footer className="back-option">
-        <button className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="" />
-        </button>
-        <span className="back-button-text">Back</span>
+      <footer className="page-footer">
+        <div className="footer-left">
+          <button type="button" className="back-button" onClick={handleBackClick}>
+            <img src={BackButton} alt="" />
+          </button>
+          <span className="back-button-text">Back</span>
+        </div>
+        {showSearchBar && hasSearchText && !isSubmitting && (
+          <div className="proceed">
+            <span className="proceed-text">Proceed</span>
+          <button type="button" className="proceed-btn" onClick={handleProceedClick}>
+            <img src={Proceed} alt="" />
+          </button>
+          </div>
+        )}
       </footer>
     </>
   )

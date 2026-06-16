@@ -37,19 +37,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px 16px;
+  padding: 16px;
   box-sizing: border-box;
 }
 
 .chosen-photo-footer .back-button {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: auto;
-  padding: 16px;
+  padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
+}
+
+.chosen-photo-footer .proceed-btn {
+  margin-left: auto;
 }
 
 .proceed-btn {

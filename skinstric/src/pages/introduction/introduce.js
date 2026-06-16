@@ -88,20 +88,22 @@ function Introduce({ onBackClick, onSearchSubmit }) {
       />
     )}
     {error && <span className="api-error-message">{error}</span>}
-    {showSearchBar && hasSearchText && (
-      <button className="proceed-btn" onClick={handleProceedClick}>
-        <img src={Proceed} alt="Proceed" />
-      </button>
-    )}
   </div>
 </div>
       </div>
     </div>
-    <footer className="back-option">
-        <button className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="" />
-        </button>
-        <span className="back-button-text">Back</span>
+    <footer className="page-footer">
+        <div className="footer-left">
+          <button type="button" className="back-button" onClick={handleBackClick}>
+            <img src={BackButton} alt="" />
+          </button>
+          <span className="back-button-text">Back</span>
+        </div>
+        {showSearchBar && hasSearchText && (
+          <button type="button" className="proceed-btn" onClick={handleProceedClick}>
+            <img src={Proceed} alt="Proceed" />
+          </button>
+        )}
       </footer>
       </div>
   )
