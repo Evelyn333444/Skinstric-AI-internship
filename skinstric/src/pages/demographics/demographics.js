@@ -290,19 +290,21 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
           </div>
         </div>
       </main>
-      <footer>
+      <footer className="demographics-footer">
         <button type="button" className="back-button" onClick={handleBackClick}>
           <img src={BackButton} alt="Back" />
-        </button>
-        <button type="button" className="reset-button" onClick={handleResetClick}>
-          <img src={Reset} alt="" />
         </button>
         <div className="footer-text-layout">
           <span className="footer-text">If A.I estimate is wrong, select the correct one</span>
         </div>
-        <button type="button" className="confirm-button" onClick={handleConfirmClick}>
-          <img src={Confirm} alt="" />
-        </button>
+        <div className="demographics-footer-actions">
+          <button type="button" className="reset-button" onClick={handleResetClick}>
+            <img src={Reset} alt="Reset" />
+          </button>
+          <button type="button" className="confirm-button" onClick={handleConfirmClick}>
+            <img src={Confirm} alt="Confirm" />
+          </button>
+        </div>
       </footer>
     </div>
   )

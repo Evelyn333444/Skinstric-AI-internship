@@ -351,52 +351,96 @@
 
 /* Footer */
 
+.demographics-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
 .footer-text-layout {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
 }
 
 .footer-text {
-    font-weight: 400;
-    font-style: regular;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    color: #A0A4AB;
+  font-weight: 400;
+  font-style: regular;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #A0A4AB;
+  text-align: center;
+}
+
+.demographics-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Buttons */
 
 .back-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50%;
-    gap: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.back-button img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .reset-button {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 100%;
-    height: 50%;
-    border: 1px #1A1B1C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.reset-button img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .confirm-button {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 100%;
-    height: 50%;
-    background-color: black;
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
+  background-color: black;
+  cursor: pointer;
+}
+
+.confirm-button img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .sidebar-buttons {

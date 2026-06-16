@@ -5,6 +5,7 @@ import Introduce from './pages/introduction/introduce';
 import Origine from './pages/origine/origine';
 import Gallery from './pages/gallery/gallery';
 import AIAnalysis from './pages/aiAnalysis/aiAnalysis';
+import PrepareAnalysis from './pages/prepareAnalysis/prepareAnalysis';
 import Demographics from './pages/demographics/demographics';
 import SelectPhoto from './components/selectPhoto/selectPhoto';
 import ChosenPhoto from './pages/chosenPhoto/chosenPhoto';
@@ -30,7 +31,7 @@ function App() {
 
   const handlePhotoConfirm = (photo) => {
     setConfirmedPhoto(photo);
-    setPage('demographics');
+    setPage('prepareAnalysis');
   };
 
   return (
@@ -97,10 +98,13 @@ function App() {
           onProceedClick={handlePhotoConfirm}
         />
       )}
+      {page === 'prepareAnalysis' && (
+        <PrepareAnalysis onComplete={() => setPage('aiAnalysis')} />
+      )}
       {page === 'aiAnalysis' && (
         <AIAnalysis
           onBackClick={() => setPage('gallery')}
-          onSearchSubmit={() => setPage('demographics')}
+          onDemographicsClick={() => setPage('demographics')}
         />
       )}
       {page === 'demographics' && (
@@ -108,7 +112,7 @@ function App() {
           userName={userName}
           userLocation={userLocation}
           confirmedPhoto={confirmedPhoto}
-          onBackClick={() => setPage('gallery')}
+          onBackClick={() => setPage('aiAnalysis')}
         />
       )}
     </div>

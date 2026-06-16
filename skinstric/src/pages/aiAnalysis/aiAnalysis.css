@@ -1,102 +1,84 @@
 /* Header */
 
+.ai-analysis-page {
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #fff;
+}
+
 .header-left {
   display: flex;
   align-items: center;
   gap: 20px;
+  padding: 16px 20px;
 }
 
 /* Body */
 
 .body-left {
-  left: 28px;
+  padding: 0 28px;
 }
 
 .body-left-bold {
-    width: 100%;
-    height: 50%;
+  width: 100%;
 }
 
 .body-left-bold-text {
-    font-weight: 600px;
-    font-style: SemiBold;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .body-left-not-bold {
-    width: 100%;
-    height: 50%;
+  width: 100%;
+  margin-top: 8px;
 }
 
 .body-left-not-bold-text {
-    font-weight: 400;
-    font-style: regular;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
 }
 
-/* Icons */
-
-.back-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50%;
-    gap: 16px;
-}
-
-.get-summary-button {
-    width: 100%;
-    height: 50%;
-    gap: 16px;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
+.body-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .summary-diagram-container {
   display: flex;
-  justify-content: center; 
-  align-items: center;     
-  width: 100vw;            
-  height: 100vh; 
-}
-
-.summary-diagram-icon {
-  width: 50%;              
-  max-width: 800px;       
-  height: auto;            
-  object-fit: contain; 
-  border: #fcfcfc 0.1px;
-}
-
-/* Shapes */
-
-.romb3 {
-  width: 300px;
-  height: 300px;
-  border: 2px dashed #dadcdf;
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
- .romb2 {
-  width: 80px;
-  height: 80px;
-  border: 2px dashed #dadcdf;
+/* Footer */
+
+.ai-analysis-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
- .romb1 {
-  width: 60px;
-  height: 60px;
-  border: 2px dashed #dadcdf;
+.back-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-button img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }

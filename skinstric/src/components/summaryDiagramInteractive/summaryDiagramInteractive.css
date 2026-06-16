@@ -1,0 +1,30 @@
+.summary-diagram-svg {
+  width: min(444px, 90vw);
+  height: auto;
+  display: block;
+}
+
+.summary-diamond {
+  fill: #F3F3F4;
+  transition: fill 0.2s ease;
+  cursor: default;
+}
+
+.summary-diamond-demographics {
+  fill: #E1E1E2;
+  cursor: pointer;
+}
+
+.summary-diamond:hover,
+.summary-diamond-demographics:hover {
+  fill: #C5C5C7;
+}
+
+.summary-diamond-demographics:focus {
+  outline: 2px solid #1A1B1C;
+  outline-offset: 2px;
+}
+
+.summary-diamond-labels {
+  pointer-events: none;
+}

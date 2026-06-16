@@ -1,70 +1,44 @@
-import React, { useState } from 'react'
+import React from 'react'
 import AnalysisHeader from 'assets/analysisHeader.svg'
 import BackButton from 'assets/backbutton.svg'
-import GetSummary from 'assets/getSummary.svg'
-import SummaryDiagram from 'assets/summaryDiagram.svg'
+import SummaryDiagramInteractive from '../../components/summaryDiagramInteractive/summaryDiagramInteractive'
 import './aiAnalysis.css'
 
-function AiAnalysis({ onBackClick, onSearchSubmit }) {
-
+function AiAnalysis({ onBackClick, onDemographicsClick }) {
   const handleBackClick = () => {
     if (onBackClick) {
       onBackClick();
     }
   };
 
-  const handleProceedClick = () => {
-    if (onSearchSubmit) {
-      onSearchSubmit();
-    }
-  };
-
-  const [hoverRombText, setHoverRombText] = useState(false);
-
   return (
-    <div>
+    <div className="ai-analysis-page">
       <header>
         <div className="header-left">
-        <img src={AnalysisHeader} alt="" />
+          <img src={AnalysisHeader} alt="" />
         </div>
       </header>
       <main>
         <div className="body-left">
-        <div className="body-left-bold">
+          <div className="body-left-bold">
             <span className="body-left-bold-text">A.I. ANALYSIS</span>
-        </div>
-        <div className="body-left-not-bold">
-            <span className="body-left-not-bold-text">A.I. HAS ESTIMATED THE FOLLOWING. FIX ESTIMATED INFORMATION IF NEEDED.</span>
-        </div>
+          </div>
+          <div className="body-left-not-bold">
+            <span className="body-left-not-bold-text">
+              A.I. HAS ESTIMATED THE FOLLOWING. FIX ESTIMATED INFORMATION IF NEEDED.
+            </span>
+          </div>
         </div>
         <div className="body-center">
-            <div className="rombuses">
-            {hoverRombText && (
-            <div className="romb1">
-                <div className="romb2">
-                    <div className="romb3">
-                      <div className="summary-diagram-container">
-                        <div className="summary-diagram-icon">
-                            <img src={SummaryDiagram} alt=""
-                            onMouseEnter={() => setHoverRombText(true)}
-                            onMouseLeave={() => setHoverRombText(false)}
-                            />
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            )}
-            </div>
+          <div className="summary-diagram-container">
+            <SummaryDiagramInteractive onDemographicsClick={onDemographicsClick} />
+          </div>
         </div>
       </main>
-      <footer>
-        <button className="back-button" onClick={handleBackClick}>
-                        <img src={BackButton} alt="Back" />
-                      </button>
-        <button className="get-summary-button" onClick={handleProceedClick}>
-                        <img src={GetSummary} alt="" />
-                      </button>              
+      <footer className="ai-analysis-footer">
+        <button type="button" className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="Back" />
+        </button>
       </footer>
     </div>
   )
