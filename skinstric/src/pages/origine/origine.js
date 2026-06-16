@@ -9,7 +9,6 @@ const PHASE_ONE_API = 'https://us-central1-frontend-simplified.cloudfunctions.ne
 function Origine({ onBackClick, onProceedSuccess }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [location, setLocation] = useState('');
-  const [hoverRombText, setHoverRombText] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const hasSearchText = location.trim().length > 0;
@@ -55,7 +54,7 @@ function Origine({ onBackClick, onProceedSuccess }) {
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || !data.success) {
         setError(data.message || 'Unable to submit credentials.');
         return;
       }
@@ -79,69 +78,66 @@ function Origine({ onBackClick, onProceedSuccess }) {
   };
 
   return (
-    <div className="origine-page">
-      <header>
-        <div className="header-left-intro">
-          <span className="header-title">SKINSTRIC</span>
-          <span className="header-intro">[INTRO]</span>
-        </div>
-      </header>
-      <main>
-        <div className="body-left-intro">
-          <span className="intro-text">TO START ANALYSIS</span>
-        </div>
-        <div className="intro-content">
-          <div className="rombuses">
-              <div className="romb1">
-                <div className="romb2">
-                  <div className="romb3">
-                <button className="intro-type-btn" onClick={handleTypeClick}>CLICK TO TYPE</button>
-                <span
-                  className="rombus-text"
-                  onMouseEnter={() => setHoverRombText(true)}
-                  onMouseLeave={() => setHoverRombText(false)}
-                >
-                  Where Are You From? (country and/or state)
-                </span>
-                {showSearchBar && (
-                  <input
-                    type="text"
-                    className="response-input"
-                    placeholder="Type your response..."
-                    value={location}
-                    onChange={handleInputChange}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && hasSearchText && !isSubmitting) {
-                        handleProceedClick();
-                      }
-                    }}
-                    autoFocus
-                  />
-                )}
-                {error && <span className="api-error-message">{error}</span>}
-                {isSubmitting && <span className="api-loading-message">Submitting...</span>}
-                {showSearchBar && hasSearchText && !isSubmitting && (
-                  <button className="proceed-btn" onClick={handleProceedClick}>
-                    <img src={Proceed} alt="Proceed" />
+    <>
+      <div className="origine-page">
+        <header>
+          <div className="header-left-intro">
+            <span className="header-title">SKINSTRIC</span>
+            <span className="header-intro">[INTRO]</span>
+          </div>
+        </header>
+        <div>
+          <div className="body-left-intro">
+            <span className="intro-text">TO START ANALYSIS</span>
+          </div>
+
+          <div className={`intro-content ${showSearchBar ? 'is-typing' : 'is-intro'}`}>
+            <div className={`rombuses ${showSearchBar ? 'typing-rombuses' : 'intro-rombuses'}`}>
+              <div className="romb1" />
+              <div className="romb2" />
+              <div className="romb3" />
+            </div>
+            <div className="intro-form">
+              {!showSearchBar ? (
+                <>
+                  <button type="button" className="intro-type-btn" onClick={handleTypeClick}>
+                    CLICK TO TYPE
                   </button>
-                )}
-              </div>
-                </div>
-              </div>
-            
+                  <span className="rombus-text">Where Are You From? (country and/or state)</span>
+                </>
+              ) : (
+                <input
+                  type="text"
+                  className="response-input"
+                  placeholder="Type your response..."
+                  value={location}
+                  onChange={handleInputChange}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && hasSearchText && !isSubmitting) {
+                      handleProceedClick();
+                    }
+                  }}
+                  autoFocus
+                />
+              )}
+              {error && <span className="api-error-message">{error}</span>}
+              {isSubmitting && <span className="api-loading-message">Submitting...</span>}
+              {showSearchBar && hasSearchText && !isSubmitting && (
+                <button type="button" className="proceed-btn" onClick={handleProceedClick}>
+                  <img src={Proceed} alt="Proceed" />
+                </button>
+              )}
+            </div>
           </div>
         </div>
-      </main>
+      </div>
       <footer>
-        <div className="back-option">
-          <button className="back-button" onClick={handleBackClick}>
-            <img src={BackButton} alt="Back" />
-          </button>
-        </div>
+        <button type="button" className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="Back" />
+        </button>
       </footer>
-    </div>
+    </>
   )
 }
 
 export default Origine
-

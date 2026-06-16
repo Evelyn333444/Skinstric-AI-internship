@@ -113,6 +113,7 @@ function App() {
           userLocation={userLocation}
           confirmedPhoto={confirmedPhoto}
           onBackClick={() => setPage('aiAnalysis')}
+          onConfirmClick={() => setPage('aiAnalysis')}
         />
       )}
     </div>
