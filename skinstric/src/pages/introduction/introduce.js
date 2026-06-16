@@ -45,7 +45,8 @@ function Introduce({ onBackClick, onSearchSubmit }) {
   };
 
   return (
-    <><div className="intro-page">
+    <div>
+    <div className="intro-page">
       <header>
         <div className="header-left-intro">
           <span className="header-title">SKINSTRIC</span>
@@ -95,11 +96,14 @@ function Introduce({ onBackClick, onSearchSubmit }) {
   </div>
 </div>
       </div>
-    </div><footer>
+    </div>
+    <footer className="back-option">
         <button className="back-button" onClick={handleBackClick}>
           <img src={BackButton} alt="" />
         </button>
-      </footer></>
+        <span className="back-button-text">Back</span>
+      </footer>
+      </div>
   )
 }
 
