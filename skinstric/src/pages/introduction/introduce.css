@@ -127,8 +127,6 @@
   transform: translate(-50%, -50%) rotate(55deg);
 }
 
-/* Icons */
-
 .rombus-inner {
   transform: rotate(-45deg);
   position: relative;
@@ -140,6 +138,8 @@
   width: 100%;
   height: 100%;
 }
+
+/* Icons */
 
 .back-button {
     display: flex;

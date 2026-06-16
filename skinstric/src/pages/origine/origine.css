@@ -38,12 +38,19 @@
 }
 
 .intro-content {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  height: calc(100vh - 160px);
   display: flex;
-  align-items: center;
   justify-content: center;
-  pointer-events: none;
+  align-items: center;
+}
+
+.intro-form {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro-type-btn {
@@ -55,74 +62,11 @@
   color: #1A1B1C;
 }
 
-.intro-rombuses {
-  width: 100vw;
-  height: 100vh;
-}
-
-.intro-rombuses .romb1,
-.intro-rombuses .romb2 {
-  display: none;
-}
-
-.intro-rombuses .romb3 {
-  top: calc(50% - 120px);
-  left: auto;
-  right: 0;
-  width: 680px;
-  height: 0;
-  border: none;
-  border-top: 2px dashed #dadcdf;
-  transform-origin: right center;
-  transform: rotate(-45deg);
-}
-
-.typing-rombuses .romb1,
-.typing-rombuses .romb2,
-.typing-rombuses .romb3 {
-  width: 430px;
-  height: 430px;
-}
-
-.typing-rombuses .romb1 {
-  opacity: 0.35;
-  transform: translate(-50%, -50%) rotate(58deg);
-}
-
-.typing-rombuses .romb2 {
-  opacity: 0.55;
-  transform: translate(-50%, -50%) rotate(33deg);
-}
-
-.typing-rombuses .romb3 {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.intro-form {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-  height: 100%;
-  transform: none;
-  pointer-events: auto;
-}
-
-.typing-rombuses {
-  width: 560px;
-  height: 560px;
-}
-
-
 .rombuses {
-  position: relative;
-  pointer-events: auto;
+  position: absolute;
+  width: 500px;
+  height: 500px;
 }
-
 
 .rombus-text {
     cursor: pointer;
