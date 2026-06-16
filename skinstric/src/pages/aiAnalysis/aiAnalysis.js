@@ -35,12 +35,14 @@ function AiAnalysis({ onBackClick, onDemographicsClick }) {
           </div>
         </div>
       </main>
-      <footer className="ai-analysis-footer">
-        <button className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="" />
-        </button>
-        <span className="back-button-text">Back</span>
-      </footer>
+      <footer className="page-footer">
+        <div className="footer-left">
+          <button type="button" className="back-button" onClick={handleBackClick}>
+            <img src={BackButton} alt="" />
+          </button>
+          <span className="back-button-text">Back</span>
+        </div>
+        </footer>
     </div>
   )
 }

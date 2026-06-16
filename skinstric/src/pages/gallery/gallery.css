@@ -29,7 +29,7 @@
 .gallery-page main {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-height: 0;
   padding: 16px 32px 80px;
@@ -64,6 +64,31 @@
   justify-content: center;
   gap: 30px;
   max-width: 100%;
+   border: 2px solid red;
+}
+
+/* Animations */
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.gallery-romb1 .gallery-rombuses {
+  animation: spin 20s linear infinite;
+}
+
+.gallery-romb2 .gallery-rombuses {
+  animation: spin 24s linear infinite;
+}
+
+.gallery-romb3 .gallery-rombuses {
+  animation: spin 28s linear infinite;
 }
 
 .gallery-card {
@@ -130,10 +155,16 @@
   object-fit: contain;
 }
 
-.gallery-footer {
+.page-footer {
   justify-content: flex-start;
   display: flex;
   width: 100%;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .back-button {
