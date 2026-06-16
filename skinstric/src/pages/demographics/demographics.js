@@ -293,9 +293,10 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
         </div>
       </main>
       <footer className="demographics-footer">
-        <button type="button" className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="Back" />
+        <button className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="" />
         </button>
+        <span className="back-button-text">Back</span>
         <div className="footer-text-layout">
           <span className="footer-text">If A.I estimate is wrong, select the correct one</span>
         </div>

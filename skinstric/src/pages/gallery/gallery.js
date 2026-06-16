@@ -63,9 +63,10 @@ function Gallery({ onBackClick, onSelectPhotoClick, onScanFaceClick }) {
         </div>
       </main>
       <footer className="gallery-footer">
-        <button type="button" className="back-button" onClick={handleBackClick}>
-          <img src={BackButton} alt="Back" />
+         <button className="back-button" onClick={handleBackClick}>
+          <img src={BackButton} alt="" />
         </button>
+        <span className="back-button-text">Back</span>
       </footer>
     </div>
   )
