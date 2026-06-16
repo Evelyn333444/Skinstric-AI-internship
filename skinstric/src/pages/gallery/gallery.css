@@ -36,7 +36,7 @@
   box-sizing: border-box;
 }
 
-.body-left-intro {
+.gallery-page .body-left-intro {
   position: absolute;
   top: 16px;
   left: 20px;

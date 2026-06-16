@@ -80,7 +80,7 @@ function Origine({ onBackClick, onProceedSuccess }) {
   return (
     <>
       <div className="origine-page">
-        <header>
+        <header className="app-header">
           <div className="header-left-intro">
             <span className="header-title">SKINSTRIC</span>
             <span className="header-intro">[INTRO]</span>
