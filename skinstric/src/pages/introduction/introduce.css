@@ -154,8 +154,7 @@
 .proceed {
      display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     width: 97px;
     height: 44px;
     gap: 16px;
