@@ -39,10 +39,19 @@
 }
 
 .intro-content {
+  position: relative;
   height: calc(100vh - 160px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+.intro-form {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro-type-btn {
@@ -55,9 +64,9 @@
 }
 
 .rombuses {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  width: 500px;
+  height: 500px;
 }
 
 .rombus-text {
@@ -69,28 +78,53 @@
     text-decoration: underline;
 }
 
+/* Spinning effect */
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.typing-rombuses .romb1 {
+  animation: spin 20s linear infinite;
+}
+
+.typing-rombuses .romb2 {
+  animation: spin 24s linear infinite;
+}
+
+.typing-rombuses .romb3 {
+  animation: spin 28s linear infinite;
+}
+
 /* Shapes */
 
+.romb1,
+.romb2,
 .romb3 {
-  width: 300px;
-  height: 300px;
-  border: 2px dashed #dadcdf;
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
- .romb2 {
-  width: 80px;
-  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
   border: 2px dashed #dadcdf;
 }
 
- .romb1 {
-  width: 60px;
-  height: 60px;
-  border: 2px dashed #dadcdf;
+.romb1 {
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.romb2 {
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.romb3 {
+  transform: translate(-50%, -50%) rotate(55deg);
 }
 
 /* Icons */
