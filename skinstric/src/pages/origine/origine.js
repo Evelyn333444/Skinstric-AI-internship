@@ -123,9 +123,12 @@ function Origine({ onBackClick, onProceedSuccess }) {
               {error && <span className="api-error-message">{error}</span>}
               {isSubmitting && <span className="api-loading-message">Submitting...</span>}
               {showSearchBar && hasSearchText && !isSubmitting && (
+                <div className="proceed">
                 <button type="button" className="proceed-btn" onClick={handleProceedClick}>
-                  <img src={Proceed} alt="Proceed" />
+                  <img src={Proceed} alt="" />
                 </button>
+                <span className="proceed-text">Proceed</span>
+                </div>
               )}
             </div>
           </div>

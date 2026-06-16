@@ -133,6 +133,20 @@
   cursor: pointer;
 }
 
+.proceed {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.proceed-text {
+    color: black;
+    font-size: 16px;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+
 .proceed-btn {
   border: none;
   background: transparent;
