@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import AnalysisHeader from 'assets/analysisHeader.svg'
 import BackButton from 'assets/backbutton.svg'
-import Reset from 'assets/reset.svg'
-import Confirm from 'assets/confirm.svg'
 import './demographics.css'
 import PercentCircle from '../../components/percentCircle/percentCircle'
 import {
@@ -304,10 +302,10 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
         </div>
         <div className="demographics-footer-actions">
           <button type="button" className="reset-button" onClick={handleResetClick}>
-            <img src={Reset} alt="Reset" />
+           
           </button>
           <button type="button" className="confirm-button" onClick={handleConfirmClick}>
-            <img src={Confirm} alt="Confirm" />
+            
           </button>
         </div>
       </footer>

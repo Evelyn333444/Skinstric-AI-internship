@@ -364,9 +364,14 @@
   box-sizing: border-box;
 }
 
-.page-footer .footer-text {
+.page-footer {
   color: black;
   font-size: 14px;
+}
+
+.footer-text {
+    color: rgb(185, 185, 185);
+    font-size: 14px;
 }
 
 .page-footer .demographics-footer-actions {
@@ -408,6 +413,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .reset-button img {
