@@ -3,6 +3,8 @@ import AnalysisHeader from 'assets/analysisHeader.svg'
 import BackButton from 'assets/backbutton.svg'
 import './demographics.css'
 import PercentCircle from '../../components/percentCircle/percentCircle'
+import Reset from '../../components/resetButton/resetButton'
+import ConfirmButton from '../../components/confirmButton/confirmButton'
 import {
   SKINSTRIC_USER_NAME_KEY,
   SKINSTRIC_USER_LOCATION_KEY,
@@ -301,12 +303,8 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
           <span className="footer-text">If A.I estimate is wrong, select the correct one</span>
         </div>
         <div className="demographics-footer-actions">
-          <button type="button" className="reset-button" onClick={handleResetClick}>
-           
-          </button>
-          <button type="button" className="confirm-button" onClick={handleConfirmClick}>
-            
-          </button>
+          <Reset />
+          <ConfirmButton />
         </div>
       </footer>
     </div>

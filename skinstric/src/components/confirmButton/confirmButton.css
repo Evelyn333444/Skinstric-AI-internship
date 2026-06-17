@@ -1,4 +1,4 @@
-.reset-button {
+.confirm-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,11 +8,12 @@
   cursor: pointer;
 }
 
-.small-white-box {
+.small-black-box {
   width: 70px;
   height: 20px;
-  background-color: #ffffff;
+  background-color: #0f0f0f;
   border: 1px solid #0f0f0f;
+  color: white;
 }
 
 .image-text {

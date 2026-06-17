@@ -1,15 +1,17 @@
-import React from 'react'
-import "./resetButton.css";
-import Reset from 'assets/reset.svg'
+import React from 'react';
+import './resetButton.css';
+import Reset from 'assets/reset.svg';
 
-function resetButton() {
+function ResetButton({ onClick }) {
   return (
-    <div>
-      <div className="small-white-box" >
-        <img src={Reset} alt="" />
+    <button type="button" className="reset-button" onClick={onClick}>
+      <div className="small-white-box">
+        <div className="image-text">
+          <img src={Reset} alt="Reset" />
+        </div>
       </div>
-    </div>
-  )
+    </button>
+  );
 }
 
-export default resetButton
+export default ResetButton;
