@@ -2,6 +2,7 @@ import React from 'react'
 import AnalysisHeader from 'assets/analysisHeader.svg'
 import BackButton from 'assets/backbutton.svg'
 import SummaryDiagramInteractive from '../../components/summaryDiagramInteractive/summaryDiagramInteractive'
+import GetSummary from 'assets/getsummary.svg'
 import './aiAnalysis.css'
 
 function AiAnalysis({ onBackClick, onDemographicsClick }) {
@@ -42,6 +43,12 @@ function AiAnalysis({ onBackClick, onDemographicsClick }) {
             <img src={BackButton} alt="" />
           </button>
           <span className="back-button-text">Back</span>
+        </div>
+        <div className="footer-right">
+          <span className="get-summary-text">Get Summary</span>
+          <button type="button" className="get-summary-btn" onClick={handleGetSummary}>
+            <img src={GetSummary} alt="" />
+          </button>
         </div>
         </footer>
     </div>
