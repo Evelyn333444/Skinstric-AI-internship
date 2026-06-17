@@ -19,10 +19,10 @@ import {
 
 function App() {
   const [page, setPage] = useState('home');
-  const [userName, setUserName] = useState(
+  const [, setUserName] = useState(
     () => sessionStorage.getItem(SKINSTRIC_USER_NAME_KEY) || ''
   );
-  const [userLocation, setUserLocation] = useState(
+  const [, setUserLocation] = useState(
     () => sessionStorage.getItem(SKINSTRIC_USER_LOCATION_KEY) || ''
   );
   const [selectedPhoto, setSelectedPhoto] = useState(null);

@@ -134,35 +134,35 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, confirmedPhot
     }
   };
 
-  const handleResetClick = () => {
-    if (!analysis) {
-      if (onResetClick) {
-        onResetClick();
-      }
-      return;
-    }
+  // const handleResetClick = () => {
+  //   if (!analysis) {
+  //     if (onResetClick) {
+  //       onResetClick();
+  //     }
+  //     return;
+  //   }
 
-    const nextRace = parsePredictions(analysis.race);
-    const nextAge = parsePredictions(analysis.age);
-    const nextGender = parsePredictions(analysis.gender);
+  //   const nextRace = parsePredictions(analysis.race);
+  //   const nextAge = parsePredictions(analysis.age);
+  //   const nextGender = parsePredictions(analysis.gender);
 
-    setSelectedValues({
-      race: nextRace[0]?.label || '',
-      age: nextAge[0]?.label || '',
-      gender: nextGender[0]?.label || '',
-    });
-    setActiveCategory('race');
+  //   setSelectedValues({
+  //     race: nextRace[0]?.label || '',
+  //     age: nextAge[0]?.label || '',
+  //     gender: nextGender[0]?.label || '',
+  //   });
+  //   setActiveCategory('race');
 
-    if (onResetClick) {
-      onResetClick();
-    }
-  };
+  //   if (onResetClick) {
+  //     onResetClick();
+  //   }
+  // };
 
-  const handleConfirmClick = () => {
-    if (onConfirmClick) {
-      onConfirmClick();
-    }
-  };
+  // const handleConfirmClick = () => {
+  //   if (onConfirmClick) {
+  //     onConfirmClick();
+  //   }
+  // };
 
   const handleCategorySelect = (category) => {
     setActiveCategory(category);
