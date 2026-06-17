@@ -357,6 +357,25 @@
   gap: 16px;
 }
 
+.page-footer .footer-text-layout {
+  flex: 1;
+  text-align: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.page-footer .footer-text {
+  color: black;
+  font-size: 14px;
+}
+
+.page-footer .demographics-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 /* Buttons */
 
 .back-button {

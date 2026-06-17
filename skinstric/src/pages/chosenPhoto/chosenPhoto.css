@@ -51,29 +51,3 @@
   background: transparent;
   cursor: pointer;
 }
-
-.chosen-photo-footer .proceed-btn {
-  margin-left: auto;
-}
-
-.proceed-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  width: 97px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.proceed-btn:hover img {
-  opacity: 0.85;
-}
-
-.proceed-btn img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}

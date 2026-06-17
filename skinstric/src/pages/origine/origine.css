@@ -198,35 +198,6 @@
   flex-direction: row;
 }
 
-.proceed {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5px;
-}
-
-.proceed-text {
-  color: black;
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
-}
-
-.proceed-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 16px;
-}
-
-.proceed-btn:hover img {
-  opacity: 0.85;
-}
-
 .response-input {
   padding: 10px 15px;
   border: 1px solid #999;

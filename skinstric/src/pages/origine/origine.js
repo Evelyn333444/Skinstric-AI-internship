@@ -134,11 +134,11 @@ function Origine({ onBackClick, onProceedSuccess }) {
           <span className="back-button-text">Back</span>
         </div>
         {showSearchBar && hasSearchText && !isSubmitting && (
-          <div className="proceed">
+          <div className="footer-right">
             <span className="proceed-text">Proceed</span>
-          <button type="button" className="proceed-btn" onClick={handleProceedClick}>
-            <img src={Proceed} alt="" />
-          </button>
+            <button type="button" className="proceed-btn" onClick={handleProceedClick}>
+              <img src={Proceed} alt="" />
+            </button>
           </div>
         )}
       </footer>
