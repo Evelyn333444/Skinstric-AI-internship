@@ -5,6 +5,7 @@ import './demographics.css'
 import PercentCircle from '../../components/percentCircle/percentCircle'
 import Reset from '../../components/resetButton/resetButton'
 import ConfirmButton from '../../components/confirmButton/confirmButton'
+import ResultsSection from 'assets/resultsSection.svg'
 import {
   SKINSTRIC_CONFIRMED_PHOTO_KEY,
 } from '../introduction/introduce'
@@ -183,11 +184,9 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, confirmedPhot
     return predictionsByCategory[category][0]?.label || 'N/A';
   };
 
-  const resultsLabel = activeCategory === 'race'
-    ? 'Type of Race'
-    : activeCategory === 'age'
-      ? 'Age Range'
-      : 'Sex';
+  const getCategoryButtonLabel = (category) => (
+    category === 'gender' ? 'SEX' : category.toUpperCase()
+  );
 
   return (
     <div className="demographics-page">
@@ -215,49 +214,43 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, confirmedPhot
       </div>
       <main className="demographics-main">
         <aside className="sidebar-buttons">
-          <div className="demographics-buttons-left">
+          <button
+            type="button"
+            className={`race ${activeCategory === 'race' ? 'is-active' : ''}`}
+            onClick={() => handleCategorySelect('race')}
+          >
             <span className="sidebar-prediction">{getTopLabel('race')}</span>
-            <button
-              type="button"
-              className={`race ${activeCategory === 'race' ? 'is-active' : ''}`}
-              onClick={() => handleCategorySelect('race')}
-            >
-              RACE
-            </button>
-          </div>
-          <div className="age-button-left">
+            <span className="sidebar-button-label">RACE</span>
+          </button>
+          <button
+            type="button"
+            className={`age-button ${activeCategory === 'age' ? 'is-active' : ''}`}
+            onClick={() => handleCategorySelect('age')}
+          >
             <span className="sidebar-prediction">{getTopLabel('age')}</span>
-            <button
-              type="button"
-              className={`age-button ${activeCategory === 'age' ? 'is-active' : ''}`}
-              onClick={() => handleCategorySelect('age')}
-            >
-              AGE
-            </button>
-          </div>
-          <div className="gender-button-left">
+            <span className="sidebar-button-label">AGE</span>
+          </button>
+          <button
+            type="button"
+            className={`gender-button ${activeCategory === 'gender' ? 'is-active' : ''}`}
+            onClick={() => handleCategorySelect('gender')}
+          >
             <span className="sidebar-prediction">{getTopLabel('gender')}</span>
-            <button
-              type="button"
-              className={`gender-button ${activeCategory === 'gender' ? 'is-active' : ''}`}
-              onClick={() => handleCategorySelect('gender')}
-            >
-              SEX
-            </button>
-          </div>
+            <span className="sidebar-button-label">SEX</span>
+          </button>
         </aside>
         <div className="demographics-center">
           <div className="demographics-center-box">
+            <div className="center-box-predictions">
+              <span className="sidebar-prediction">{getTopLabel(activeCategory)}</span>
+            </div>
             <PercentCircle percentage={selectedPrediction.percentage} />
           </div>
         </div>
         <div className="demographics-right">
           <div className="results-box">
-            <span className="type-race">{resultsLabel}</span>
-            <span className="type-race-value">{selectedPrediction.label}</span>
-          </div>
-          <div className="ai-confidence-percent-box">
-            <div className="ai-confidence">
+            <div className="results-box-header">
+              <span className="sidebar-button-label">{getCategoryButtonLabel(activeCategory)}</span>
               <span className="title-row-text">A.I. CONFIDENCE</span>
             </div>
             <div className="types">
@@ -270,8 +263,9 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, confirmedPhot
                   }`}
                   onClick={() => handlePredictionSelect(item.label)}
                 >
+                  <img src={ResultsSection} alt="" className="demographics-type-icon" />
                   <span className={`${TYPE_CLASSES[index] || 'type-7'}-classification`}>
-                    {activeCategory.toUpperCase()} #{index + 1}: {item.label}
+                    {item.label}
                   </span>
                   <span className={`${TYPE_CLASSES[index] || 'type-7'}-percentage`}>
                     {item.percentage}%
