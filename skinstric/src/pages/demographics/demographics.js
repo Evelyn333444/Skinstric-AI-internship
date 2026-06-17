@@ -6,8 +6,6 @@ import PercentCircle from '../../components/percentCircle/percentCircle'
 import Reset from '../../components/resetButton/resetButton'
 import ConfirmButton from '../../components/confirmButton/confirmButton'
 import {
-  SKINSTRIC_USER_NAME_KEY,
-  SKINSTRIC_USER_LOCATION_KEY,
   SKINSTRIC_CONFIRMED_PHOTO_KEY,
 } from '../introduction/introduce'
 
@@ -29,9 +27,7 @@ const parsePredictions = (predictions) => {
     .sort((a, b) => b.percentage - a.percentage);
 };
 
-function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, userLocation, confirmedPhoto }) {
-  const displayName = userName || sessionStorage.getItem(SKINSTRIC_USER_NAME_KEY) || '';
-  const displayLocation = userLocation || sessionStorage.getItem(SKINSTRIC_USER_LOCATION_KEY) || '';
+function Demographics({ onResetClick, onBackClick, onConfirmClick, confirmedPhoto }) {
   const photoForAnalysis = confirmedPhoto || sessionStorage.getItem(SKINSTRIC_CONFIRMED_PHOTO_KEY) || '';
 
   const [analysis, setAnalysis] = useState(null);
@@ -194,78 +190,72 @@ function Demographics({ onResetClick, onBackClick, onConfirmClick, userName, use
       : 'Sex';
 
   return (
-    <div>
+    <div className="demographics-page">
       <header>
         <div className="header-left">
           <img src={AnalysisHeader} alt="" />
         </div>
       </header>
-      <main>
-        <div className="body-left">
-          <div className="body-left-bold">
-            <span className="body-left-bold-text">A.I. ANALYSIS</span>
-          </div>
-          <div className="body-left-big-bold">
-            <span className="body-left-big-bold-text">DEMOGRAPHICS</span>
-          </div>
-          <div className="body-left-no-bold">
-            <span className="body-left-no-bold-text">PREDICTED RACE AND AGE</span>
-          </div>
-          {(displayName || displayLocation) && (
-            <div className="body-left-user-credentials">
-              {displayName && (
-                <span className="body-left-user-name">NAME: {displayName.toUpperCase()}</span>
-              )}
-              {displayLocation && (
-                <span className="body-left-user-location">FROM: {displayLocation.toUpperCase()}</span>
-              )}
-            </div>
-          )}
-          {isLoading && (
-            <span className="demographics-status">Analyzing photo...</span>
-          )}
-          {error && (
-            <span className="demographics-status demographics-status-error">{error}</span>
-          )}
+      <div className="body-left">
+        <div className="body-left-bold">
+          <span className="body-left-bold-text">A.I. ANALYSIS</span>
         </div>
-        <div className="body-center">
-          <div className="sidebar-buttons">
-            <div className="demographics-buttons-left">
-              <span className="sidebar-prediction">{getTopLabel('race')}</span>
-              <button
-                type="button"
-                className={`race ${activeCategory === 'race' ? 'is-active' : ''}`}
-                onClick={() => handleCategorySelect('race')}
-              >
-                RACE
-              </button>
-            </div>
-            <div className="age-button-left">
-              <span className="sidebar-prediction">{getTopLabel('age')}</span>
-              <button
-                type="button"
-                className={`age-button ${activeCategory === 'age' ? 'is-active' : ''}`}
-                onClick={() => handleCategorySelect('age')}
-              >
-                AGE
-              </button>
-            </div>
-            <div className="gender-button-left">
-              <span className="sidebar-prediction">{getTopLabel('gender')}</span>
-              <button
-                type="button"
-                className={`gender-button ${activeCategory === 'gender' ? 'is-active' : ''}`}
-                onClick={() => handleCategorySelect('gender')}
-              >
-                SEX
-              </button>
-            </div>
+        <div className="body-left-big-bold">
+          <span className="body-left-big-bold-text">DEMOGRAPHICS</span>
+        </div>
+        <div className="body-left-no-bold">
+          <span className="body-left-no-bold-text">PREDICTED RACE AND AGE</span>
+        </div>
+        {isLoading && (
+          <span className="demographics-status">Analyzing photo...</span>
+        )}
+        {error && (
+          <span className="demographics-status demographics-status-error">{error}</span>
+        )}
+      </div>
+      <main className="demographics-main">
+        <aside className="sidebar-buttons">
+          <div className="demographics-buttons-left">
+            <span className="sidebar-prediction">{getTopLabel('race')}</span>
+            <button
+              type="button"
+              className={`race ${activeCategory === 'race' ? 'is-active' : ''}`}
+              onClick={() => handleCategorySelect('race')}
+            >
+              RACE
+            </button>
           </div>
+          <div className="age-button-left">
+            <span className="sidebar-prediction">{getTopLabel('age')}</span>
+            <button
+              type="button"
+              className={`age-button ${activeCategory === 'age' ? 'is-active' : ''}`}
+              onClick={() => handleCategorySelect('age')}
+            >
+              AGE
+            </button>
+          </div>
+          <div className="gender-button-left">
+            <span className="sidebar-prediction">{getTopLabel('gender')}</span>
+            <button
+              type="button"
+              className={`gender-button ${activeCategory === 'gender' ? 'is-active' : ''}`}
+              onClick={() => handleCategorySelect('gender')}
+            >
+              SEX
+            </button>
+          </div>
+        </aside>
+        <div className="demographics-center">
+          <div className="demographics-center-box">
+            <PercentCircle percentage={selectedPrediction.percentage} />
+          </div>
+        </div>
+        <div className="demographics-right">
           <div className="results-box">
             <span className="type-race">{resultsLabel}</span>
             <span className="type-race-value">{selectedPrediction.label}</span>
           </div>
-          <PercentCircle percentage={selectedPrediction.percentage} />
           <div className="ai-confidence-percent-box">
             <div className="ai-confidence">
               <span className="title-row-text">A.I. CONFIDENCE</span>

@@ -113,8 +113,6 @@ function App() {
       )}
       {page === 'demographics' && (
         <Demographics
-          userName={userName}
-          userLocation={userLocation}
           confirmedPhoto={confirmedPhoto}
           onBackClick={() => setPage('aiAnalysis')}
           onConfirmClick={() => setPage('aiAnalysis')}
