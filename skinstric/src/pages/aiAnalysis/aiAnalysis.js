@@ -2,7 +2,7 @@ import React from 'react'
 import AnalysisHeader from 'assets/analysisHeader.svg'
 import BackButton from 'assets/backbutton.svg'
 import SummaryDiagramInteractive from '../../components/summaryDiagramInteractive/summaryDiagramInteractive'
-import GetSummary from 'assets/getsummary.svg'
+import GetSummary from '../../assets/getsummary.svg'
 import './aiAnalysis.css'
 
 function AiAnalysis({ onBackClick, onDemographicsClick }) {
