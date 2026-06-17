@@ -12,6 +12,12 @@ function AiAnalysis({ onBackClick, onDemographicsClick }) {
     }
   };
 
+  const handleGetSummary = () => {
+    if (onDemographicsClick) {
+      onDemographicsClick();
+    }
+  };
+
   return (
     <div className="ai-analysis-page">
       <header>

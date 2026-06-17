@@ -101,4 +101,33 @@
   flex-direction: row;
 }
 
+.get-summary-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+}
 
+.get-summary-text {
+  color: black;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.get-summary-btn img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}

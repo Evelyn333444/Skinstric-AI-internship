@@ -101,7 +101,7 @@ function Introduce({ onBackClick, onSearchSubmit }) {
         </div>
         {showSearchBar && hasSearchText && (
           <button type="button" className="proceed-btn" onClick={handleProceedClick}>
-            <img src={Proceed} alt="Proceed" />
+            <img src={Proceed} alt="" />
           </button>
         )}
       </footer>
