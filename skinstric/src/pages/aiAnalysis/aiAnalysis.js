@@ -38,10 +38,15 @@ function AiAnalysis({ onBackClick, onDemographicsClick }) {
         </div>
         
         <div className="body-center">
+          <div className="analysis-rombuses" aria-hidden="true">
+            <div className="romb1-analysis" />
+            <div className="romb2-analysis" />
+            <div className="romb3-analysis" />
+          </div>
           <div className="summary-diagram-container">
             <SummaryDiagramInteractive onDemographicsClick={onDemographicsClick} />
           </div>
-          </div>
+        </div>
       </main>
       <footer className="page-footer">
         <div className="footer-left">

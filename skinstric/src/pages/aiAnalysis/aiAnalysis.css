@@ -4,6 +4,8 @@
   min-height: 100dvh;
   overflow: hidden;
   background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-left {
@@ -13,11 +15,78 @@
   padding: 16px 20px;
 }
 
+/* Animations */
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.typing-rombuses .romb1-analysis,
+.intro-rombuses .romb1-analysis,
+.romb1-analysis {
+  animation: spin 20s linear infinite;
+}
+
+.typing-rombuses .romb2-analysis,
+.intro-rombuses .romb2-analysis,
+.romb2-analysis {
+  animation: spin 24s linear infinite;
+}
+
+.typing-rombuses .romb3-analysis,
+.intro-rombuses .romb3-analysis,
+.romb3-analysis {
+  animation: spin 28s linear infinite;
+}
+
+/* Shapes */
+
+.analysis-rombuses {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.romb1-analysis,
+.romb2-analysis,
+.romb3-analysis {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px dashed #dadcdf;
+}
+
+.romb1-analysis {
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.romb2-analysis {
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.romb3-analysis {
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%, -50%) rotate(55deg);
+}
+
 /* Body */
 
 .ai-analysis-page main {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
 }
 
 .ai-analysis-page .body-left {
@@ -59,17 +128,18 @@
 }
 
 .ai-analysis-page .body-center {
-  position: static;
-  top: auto;
-  left: auto;
-  transform: none;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  min-height: 0;
   padding: 20px;
 }
 
 .ai-analysis-page .summary-diagram-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,57 +147,62 @@
 
 /* Footer */
 
-.ai-analysis-footer {
-  justify-content: flex-start;
+.ai-analysis-page .page-footer {
+  justify-content: space-between;
+}
+
+.ai-analysis-page .footer-left {
   display: flex;
-  width: 100%;
+  align-items: center;
+  gap: 16px;
 }
 
-.back-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 50%;
-    gap: 16px;
+.ai-analysis-page .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
 }
 
-.back-button-text {
-  color: black;
-  font-size: 16px;
-  justify-content: flex-start;
+.ai-analysis-page .back-button {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+  gap: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
 }
 
-.get-summary-btn {
+.ai-analysis-page .back-button-text {
+  color: black;
+  font-size: 16px;
+}
+
+.ai-analysis-page .get-summary-btn {
   border: none;
   background: transparent;
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 16px;
+  justify-content: center;
+  width: auto;
+  height: auto;
 }
 
-.get-summary-text {
+.ai-analysis-page .get-summary-text {
   color: black;
   font-size: 16px;
-  display: flex;
-  flex-direction: row;
+  white-space: nowrap;
 }
 
-.get-summary-btn img {
+.ai-analysis-page .get-summary-btn img {
   width: 48px;
   height: 48px;
   object-fit: contain;
-}
-
-.footer-right {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5px;
 }
