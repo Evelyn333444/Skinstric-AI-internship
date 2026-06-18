@@ -8,7 +8,6 @@ import AIAnalysis from './pages/aiAnalysis/aiAnalysis';
 import PrepareAnalysis from './pages/prepareAnalysis/prepareAnalysis';
 import Demographics from './pages/demographics/demographics';
 import SelectPhoto from './components/selectPhoto/selectPhoto';
-import ChosenPhoto from './pages/chosenPhoto/chosenPhoto';
 import ScanFace from './components/scanFace/scanFace';
 import ScannedFaceFullScreen from './pages/scannedFaceFullScreen/scannedFaceFullScreen';
 import {
@@ -30,7 +29,6 @@ function App() {
   const [confirmedPhoto, setConfirmedPhoto] = useState(
     () => sessionStorage.getItem(SKINSTRIC_CONFIRMED_PHOTO_KEY) || null
   );
-  const [photoBackPage, setPhotoBackPage] = useState('selectPhoto');
 
   const handlePhotoConfirm = (photo) => {
     setConfirmedPhoto(photo);
@@ -90,16 +88,18 @@ function App() {
           onBackClick={() => setPage('gallery')}
           onPhotoSelected={(photo) => {
             setSelectedPhoto(photo);
-            setPhotoBackPage('selectPhoto');
             setPage('chosenPhoto');
           }}
         />
       )}
       {page === 'chosenPhoto' && (
-        <ChosenPhoto
-          selectedPhoto={selectedPhoto}
-          onBackClick={() => setPage(photoBackPage)}
-          onProceedClick={handlePhotoConfirm}
+        <ScannedFaceFullScreen
+          scannedPhoto={selectedPhoto}
+          onKeepPhotoClick={handlePhotoConfirm}
+          onTryAgainClick={() => {
+            setSelectedPhoto(null);
+            setPage('gallery');
+          }}
         />
       )}
       {page === 'prepareAnalysis' && (

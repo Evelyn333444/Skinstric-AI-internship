@@ -179,3 +179,40 @@
   display: flex;
   flex-direction: row;
 }
+
+@media (max-width: 768px) {
+  .gallery-page {
+    height: auto;
+    min-height: 100dvh;
+    max-height: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .gallery-page main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 56px 24px 96px;
+  }
+
+  .gallery-page .body-left-intro {
+    position: static;
+    align-self: flex-start;
+    width: 100%;
+    padding: 0 4px;
+    margin-bottom: 8px;
+  }
+
+  .gallery-page .body-center {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    --card-size: min(300px, calc(100vw - 48px));
+    --card-gap: 30px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
