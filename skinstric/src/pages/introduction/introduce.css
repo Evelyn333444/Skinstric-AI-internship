@@ -118,13 +118,12 @@
   align-items: center;
 }
 
-.intro-type-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.intro-type-hint {
   font-size: 14px;
   font-weight: 600;
-  color: #1A1B1C;
+  color: rgb(185, 185, 185);
+  pointer-events: none;
+  user-select: none;
 }
 
 .rombuses {
@@ -137,12 +136,62 @@
 }
 
 .rombus-text {
-    cursor: pointer;
-    transition: text-decoration 0.3s ease;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
 }
 
 .rombus-text:hover {
-    text-decoration: underline;
+  opacity: 0.7;
+}
+
+.inline-prompt-field {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: min(100%, 420px);
+}
+
+.inline-prompt-field .prompt-label {
+  position: relative;
+  z-index: 1;
+}
+
+.inline-prompt-field:not(.has-value) .inline-response-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: #1A1B1C;
+  box-shadow: none;
+  text-align: center;
+}
+
+.inline-prompt-field.has-value .inline-response-input {
+  position: static;
+  width: auto;
+  min-width: min(100%, 420px);
+  max-width: min(100vw - 32px, 520px);
+  padding: 0 4px 2px;
+  border: none;
+  border-bottom: 1px solid #1A1B1C;
+  border-radius: 0;
+  background: transparent;
+  color: #1A1B1C;
+  box-shadow: none;
+  text-align: center;
 }
 
 /* Spinning effect */
@@ -276,27 +325,17 @@
 }
 
 .response-input {
-  padding: 10px 15px;
-  border: 1px solid #999;
-  border-radius: 4px;
   font-size: 14px;
   outline: none;
-  width: 220px;
-  height: 40px;
-  font-family: Arial, sans-serif;
+  height: auto;
+  font-family: inherit;
   color: #1A1B1C;
-  background: white;
+  background: transparent;
   box-sizing: border-box;
 }
 
-
 .response-input:focus {
-  border-color: #1A1B1C;
-  box-shadow: 0 0 4px rgba(26, 27, 28, 0.3);
-}
-
-.response-input::placeholder {
-  color: #9ca3af;
+  outline: none;
 }
 
 .api-error-message,

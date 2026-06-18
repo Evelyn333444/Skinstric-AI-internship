@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import BackButton from 'assets/backbutton.svg'
 import './origine.css'
 import Proceed from 'assets/proceed.svg'
@@ -7,14 +7,17 @@ import { SKINSTRIC_USER_NAME_KEY, SKINSTRIC_USER_LOCATION_KEY } from '../introdu
 const PHASE_ONE_API = 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne';
 
 function Origine({ onBackClick, onProceedSuccess }) {
-  const [showSearchBar, setShowSearchBar] = useState(false);
   const [location, setLocation] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const inputRef = useRef(null);
+  const hasStartedTyping = location.length > 0;
   const hasSearchText = location.trim().length > 0;
+  const isTyping = isFocused || hasStartedTyping;
 
-  const handleTypeClick = () => {
-    setShowSearchBar(true);
+  const handlePromptClick = () => {
+    inputRef.current?.focus();
   };
 
   const handleInputChange = (e) => {
@@ -91,35 +94,36 @@ function Origine({ onBackClick, onProceedSuccess }) {
             <span className="intro-text">TO START ANALYSIS</span>
           </div>
 
-          <div className={`intro-content ${showSearchBar ? 'is-typing' : 'is-intro'}`}>
-            <div className={`rombuses ${showSearchBar ? 'typing-rombuses' : 'intro-rombuses'}`}>
+          <div className={`intro-content ${isTyping ? 'is-typing' : 'is-intro'}`}>
+            <div className={`rombuses ${isTyping ? 'typing-rombuses' : 'intro-rombuses'}`}>
               <div className="romb1" />
               <div className="romb2" />
               <div className="romb3" />
             </div>
             <div className="intro-form">
-              {!showSearchBar ? (
-                <>
-                  <button type="button" className="intro-type-btn" onClick={handleTypeClick}>
-                    CLICK TO TYPE
+              <span className="intro-type-hint">CLICK TO TYPE</span>
+              <div className={`inline-prompt-field ${hasStartedTyping ? 'has-value' : ''}`}>
+                {!hasStartedTyping && (
+                  <button type="button" className="rombus-text prompt-label" onClick={handlePromptClick}>
+                    Where Are You From? (country and/or state)
                   </button>
-                  <span className="rombus-text">Where Are You From? (country and/or state)</span>
-                </>
-              ) : (
+                )}
                 <input
+                  ref={inputRef}
                   type="text"
-                  className="response-input"
-                  placeholder="Type your response..."
+                  className="response-input inline-response-input"
                   value={location}
                   onChange={handleInputChange}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && hasSearchText && !isSubmitting) {
                       handleProceedClick();
                     }
                   }}
-                  autoFocus
+                  aria-label="Where are you from"
                 />
-              )}
+              </div>
               {error && <span className="api-error-message">{error}</span>}
               {isSubmitting && <span className="api-loading-message">Submitting...</span>}
             </div>
@@ -133,7 +137,7 @@ function Origine({ onBackClick, onProceedSuccess }) {
           </button>
           <span className="back-button-text">Back</span>
         </div>
-        {showSearchBar && hasSearchText && !isSubmitting && (
+        {hasSearchText && !isSubmitting && (
           <div className="footer-right">
             <span className="proceed-text">Proceed</span>
             <button type="button" className="proceed-btn" onClick={handleProceedClick}>

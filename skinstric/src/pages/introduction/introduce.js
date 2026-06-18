@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './introduce.css'
 import BackButton from 'assets/backbutton.svg'
 import Proceed from 'assets/proceed.svg'
@@ -8,13 +8,16 @@ export const SKINSTRIC_USER_LOCATION_KEY = 'skinstricPhaseOneLocation';
 export const SKINSTRIC_CONFIRMED_PHOTO_KEY = 'skinstricConfirmedPhoto';
 
 function Introduce({ onBackClick, onSearchSubmit }) {
-  const [showSearchBar, setShowSearchBar] = useState(false);
   const [name, setName] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
   const [error, setError] = useState('');
+  const inputRef = useRef(null);
+  const hasStartedTyping = name.length > 0;
   const hasSearchText = name.trim().length > 0;
+  const isTyping = isFocused || hasStartedTyping;
 
-  const handleTypeClick = () => {
-    setShowSearchBar(true);
+  const handlePromptClick = () => {
+    inputRef.current?.focus();
   };
 
   const handleInputChange = (e) => {
@@ -58,35 +61,36 @@ function Introduce({ onBackClick, onSearchSubmit }) {
           <span className="intro-text">TO START ANALYSIS</span>
         </div>
 
-              <div className={`intro-content ${showSearchBar ? "is-typing" : "is-intro"}`}>
-  <div className={`rombuses ${showSearchBar ? "typing-rombuses" : "intro-rombuses"}`}>
+              <div className={`intro-content ${isTyping ? "is-typing" : "is-intro"}`}>
+  <div className={`rombuses ${isTyping ? "typing-rombuses" : "intro-rombuses"}`}>
     <div className="romb1" />
     <div className="romb2" />
     <div className="romb3" />
   </div>
   <div className="intro-form">
-    {!showSearchBar ? (
-      <>
-        <button className="intro-type-btn" onClick={handleTypeClick}>
-          CLICK TO TYPE
+    <span className="intro-type-hint">CLICK TO TYPE</span>
+    <div className={`inline-prompt-field ${hasStartedTyping ? 'has-value' : ''}`}>
+      {!hasStartedTyping && (
+        <button type="button" className="rombus-text prompt-label" onClick={handlePromptClick}>
+          Introduce Yourself (state your name)
         </button>
-        <span className="rombus-text">Introduce Yourself (state your name)</span>
-      </>
-    ) : (
+      )}
       <input
+        ref={inputRef}
         type="text"
-        className="response-input"
-        placeholder="Type your response..."
+        className="response-input inline-response-input"
         value={name}
         onChange={handleInputChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         onKeyDown={(e) => {
           if (e.key === "Enter" && hasSearchText) {
             handleProceedClick();
           }
         }}
-        autoFocus
+        aria-label="Introduce yourself"
       />
-    )}
+    </div>
     {error && <span className="api-error-message">{error}</span>}
   </div>
 </div>
@@ -99,7 +103,7 @@ function Introduce({ onBackClick, onSearchSubmit }) {
           </button>
           <span className="back-button-text">Back</span>
         </div>
-        {showSearchBar && hasSearchText && (
+        {hasSearchText && (
           <div className="footer-right">
             <span className="proceed-text">Proceed</span>
             <button type="button" className="proceed-btn" onClick={handleProceedClick}>
