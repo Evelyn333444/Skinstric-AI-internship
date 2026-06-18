@@ -500,11 +500,54 @@
 @media (max-width: 900px) {
   .demographics-main {
     --demographics-top-offset: 120px;
-    grid-template-columns: 150px 1fr 220px;
+    --demographics-panel-height: min(360px, 45vh);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    min-height: auto;
   }
 
   .demographics-page .body-left-big-bold-text {
     font-size: clamp(28px, 4vw, 48px);
+  }
+
+  .sidebar-buttons {
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .race,
+  .race-button,
+  .age-button,
+  .gender-button {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 88px;
+  }
+
+  .demographics-center {
+    width: 100%;
+    margin-left: 0;
+    justify-content: stretch;
+  }
+
+  .demographics-center-box {
+    width: 100%;
+    height: var(--demographics-panel-height);
+  }
+
+  .demographics-right {
+    width: 100%;
+    margin-left: 0;
+    height: auto;
+    min-height: min(360px, 40vh);
+  }
+
+  .results-box {
+    min-height: min(360px, 40vh);
   }
 }
 
@@ -514,10 +557,29 @@
   }
 
   .demographics-main {
-    grid-template-columns: 72px 1fr 180px;
+    --demographics-top-offset: 108px;
+    --demographics-panel-height: min(300px, 42vh);
+    gap: 12px;
+    padding-bottom: 112px;
   }
 
   .demographics-page .body-left {
-    max-width: 180px;
+    max-width: calc(100% - (var(--demographics-gutter) * 2));
+  }
+
+  .race,
+  .race-button,
+  .age-button,
+  .gender-button {
+    height: 76px;
+  }
+
+  .demographics-center-box .sidebar-prediction {
+    font-size: clamp(18px, 5vw, 30px);
+  }
+
+  .demographics-right,
+  .results-box {
+    min-height: min(320px, 38vh);
   }
 }
